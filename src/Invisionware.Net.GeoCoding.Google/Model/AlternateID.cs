@@ -23,7 +23,7 @@ namespace Invisionware.Net.GeoCoding.Google.Model
 	/// </summary>
 	[DebuggerDisplay("ID = {ID}, Scope = {Scope}")]
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	internal class AlternateID
+	public sealed class AlternateID
 	{
 		/// <summary>
 		/// Gets or sets the identifier.

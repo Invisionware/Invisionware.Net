@@ -24,7 +24,7 @@ namespace Invisionware.Net.GeoCoding.Google.Model
 	/// </summary>
 	[DebuggerDisplay("PhotoReference = {PhotoReference}, Height = {Height}, Width = {Width}")]
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	internal class Photo
+	public sealed class Photo
 	{
 		/// <summary>
 		/// Gets or sets the height.

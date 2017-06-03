@@ -19,7 +19,7 @@ namespace Invisionware.Net.GeoCoding.Google.Model
 	/// <summary>
 	/// Class Bounds.
 	/// </summary>
-	internal class Bounds
+	public sealed class Bounds
 	{
 		/// <summary>
 		/// Gets or sets the north east.

@@ -24,9 +24,6 @@ public class VersionUtils
 			case VersionSourceTypes.assemblyinfo:
 				verInfo = LoadVersionFromAssemblyInfo(context, settings.Version.AssemblyInfoFile);
 				break;
-//			case VersionSourceTypes.projectFile:
-//					verInfo = LoadVersionFromProjectFile(context, settings.Version.ProjectFile);
-//				break;
 			case VersionSourceTypes.git:
 				verInfo = LoadVersionFromGit(context);
 				break;
@@ -111,35 +108,6 @@ public class VersionUtils
 
 		return null;
 	}
-
-	private static VersionInfo LoadVersionFromProjectFile(ICakeContext context, string projectFile)
-	{
-		context.Information("Fetching Version Info from Project File: {0}", projectFile);
-		
-		if (!string.IsNullOrEmpty(projectFile) || !context.FileExists(projectFile))
-		{
-			context.Error("Project File file does not exist");
-			return null;
-		}
-
-		try {
-			var assemblyInfo = context.XmlPeek(projectFile, "/Project/PropertyGroup/AssemblyVersion/@value");
-			var v = Version.Parse(assemblyInfo);
-			
-			var verInfo = new VersionInfo {
-				Major = v.Major,
-				Minor = v.Minor,
-				Build = v.Build,
-				//Semantic = assemblyInfo.AssemblyInformationalVersion,
-				Milestone = string.Concat("v", v.ToString())
-			};
-			
-			return verInfo;
-		}
-		catch {}
-		
-		return null;
-	}
 	
 	public static void UpdateVersion(ICakeContext context, Settings settings, VersionInfo verInfo)
 	{
@@ -148,44 +116,19 @@ public class VersionUtils
 			throw new ArgumentNullException("context");
 		}
 
-		UpdateVersionInVersionFile(context, settings.Version.VersionFile, verInfo);
-		UpdateVersionInAssemblyInfoFile(context, settings.Version.AssemblyInfoFile, verInfo);
-	}
-	
-	public static void UpdateVersionInVersionFile(ICakeContext context, string jsonVersionFile, VersionInfo verInfo)
-	{
-		if (!string.IsNullOrEmpty(jsonVersionFile) && context.FileExists(jsonVersionFile))
+		if (!string.IsNullOrEmpty(settings.Version.VersionFile) && context.FileExists(settings.Version.VersionFile))
 		{	
-			context.Information("Updating Version File {0}", jsonVersionFile);
+			context.Information("Updating Version File {0}", settings.Version.VersionFile);
 			
-			context.SerializeJsonToFile(jsonVersionFile, verInfo);
+			context.SerializeJsonToFile(settings.Version.VersionFile, verInfo);
 		}
-	}
-	
-	public static void UpdateVersionInAssemblyInfoFile(ICakeContext context, string assemblyInfoFile, VersionInfo verInfo)
-	{
-		if (!string.IsNullOrEmpty(assemblyInfoFile) && context.FileExists(assemblyInfoFile))
+		
+		if (!string.IsNullOrEmpty(settings.Version.AssemblyInfoFile) && context.FileExists(settings.Version.AssemblyInfoFile))
 		{
-			context.Information("Updating Assembly Info File {0}", assemblyInfoFile);
+			context.Information("Updating Assembly Info File {0}", settings.Version.AssemblyInfoFile);
 			
-			context.ReplaceRegexInFiles(assemblyInfoFile, "AssemblyVersion\\(.*\\)", string.Format("AssemblyVersion(\"{0}\")", verInfo.ToString(false)));
-			context.ReplaceRegexInFiles(assemblyInfoFile, "AssemblyFileVersion\\(.*\\)", string.Format("AssemblyFileVersion(\"{0}\")", verInfo.ToString(false)));
-		}
-	}
-	
-	public static void UpdateVersionInProjectFile(ICakeContext context, string projectFile, VersionInfo verInfo)
-	{
-		if (context == null)
-		{
-			throw new ArgumentNullException("context");
-		}
-
-		if (!string.IsNullOrEmpty(projectFile) && context.FileExists(projectFile))
-		{
-			context.Information("Updating Project Info File {0}", projectFile);
-			
-			context.XmlPoke(projectFile, "/Project/PropertyGroup/AssemblyVersion/@value", verInfo.ToString(false));
-			context.XmlPoke(projectFile, "/Project/PropertyGroup/FileVersion/@value", verInfo.ToString(false));
+			context.ReplaceRegexInFiles(settings.Version.AssemblyInfoFile, "AssemblyVersion\\(.*\\)", string.Format("AssemblyVersion(\"{0}\")", verInfo.ToString(false)));
+			context.ReplaceRegexInFiles(settings.Version.AssemblyInfoFile, "AssemblyFileVersion\\(.*\\)", string.Format("AssemblyFileVersion(\"{0}\")", verInfo.ToString(false)));
 		}
 	}
 

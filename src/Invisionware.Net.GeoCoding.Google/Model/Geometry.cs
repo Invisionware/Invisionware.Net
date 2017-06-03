@@ -21,7 +21,7 @@ namespace Invisionware.Net.GeoCoding.Google.Model
 	/// Class Geometry.
 	/// </summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	internal class Geometry
+	public sealed class Geometry
 	{
 		/// <summary>
 		/// Gets or sets the location.

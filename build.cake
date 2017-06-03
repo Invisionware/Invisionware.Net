@@ -127,10 +127,8 @@ Task("Build")
 	{
 		Information("Building {0}", solution);
 		try {
-			MSBuild(solution, s =>
-				s.SetPlatformTarget(PlatformTarget.MSIL)
-					.SetMaxCpuCount(settings.Build.MaxCpuCount)
-					.WithProperty("TreatWarningsAsErrors",settings.Build.TreatWarningsAsErrors.ToString())
+			DotNetBuild(solution, s =>
+					s.WithProperty("TreatWarningsAsErrors",settings.Build.TreatWarningsAsErrors.ToString())
 					.WithTarget("Build")
 					.SetConfiguration(settings.Configuration));
 		} 

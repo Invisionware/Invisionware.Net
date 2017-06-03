@@ -23,7 +23,7 @@ namespace Invisionware.Net.GeoCoding.Google.Model
 	/// </summary>
 	[DebuggerDisplay("OpenNow = {OpenNow}")]
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	internal class OpeningHours
+	public sealed class OpeningHours
 	{
 		/// <summary>
 		/// Gets or sets a value indicating whether [open now].

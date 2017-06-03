@@ -133,51 +133,35 @@
 		<file src="..\docs\Invisionware.Net.GeoCoding.txt" target="content" />
 
 		<!-- Framework: Portable Profile 259 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
 
 		<!-- Framework: Portable Profile 111 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
 
 		<!-- Framework: Portable Profile 78 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
 
 		<!-- Framework: NetStandard1.1 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.dll" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.pdb" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.dll" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.pdb" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\NetStandard1.1" />
-
-		<!-- Framework: NetStandard1.2 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.dll" target="lib\NetStandard1.2" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.pdb" target="lib\NetStandard1.2" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.dll" target="lib\NetStandard1.2" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.pdb" target="lib\NetStandard1.2" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\NetStandard1.2" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\NetStandard1.2" />
-
-		<!-- Framework: NetStandard1.3 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.dll" target="lib\NetStandard1.3" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\Invisionware.Net.GeoCoding.pdb" target="lib\NetStandard1.3" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.dll" target="lib\NetStandard1.3" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\Invisionware.Net.GeoCoding.Google.pdb" target="lib\NetStandard1.3" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\NetStandard1.3" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\NetStandard1.3" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.dll" target="lib\NetStandard1.1" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.pdb" target="lib\NetStandard1.1" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.dll" target="lib\NetStandard1.1" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.pdb" target="lib\NetStandard1.1" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\NetStandard1.1" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\NetStandard1.1" />
 	</files>
 </package>

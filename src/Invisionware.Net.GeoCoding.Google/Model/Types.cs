@@ -587,7 +587,7 @@ namespace Invisionware.Net.GeoCoding.Google.Model
 	/// https://developers.google.com/maps/documentation/geocoding/
 	/// </summary>
 	[JsonConverter(typeof(StringEnumConverter))]
-	internal enum GoogleAddressTypes
+	public enum GoogleAddressTypes
 	{
 		/// <summary>
 		/// indicates a precise street address.

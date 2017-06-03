@@ -99,27 +99,20 @@
 	</metadata>
 	<files>
 		<!-- Framework: Portable Profile 259 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wpa81+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wpa81+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wpa81+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wpa81+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
 
 		<!-- Framework: Portable Profile 111 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
 
 		<!-- Framework: Portable Profile 78 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
 
 		<!-- Framework: NetStandard1.1 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.dll" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.pdb" target="lib\NetStandard1.1" />
+		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\NetStandard1.1" />
+		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\NetStandard1.1" />
 
-		<!-- Framework: NetStandard1.2 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.dll" target="lib\NetStandard1.2" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.pdb" target="lib\NetStandard1.2" />
-
-		<!-- Framework: NetStandard1.3 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.dll" target="lib\NetStandard1.3" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\Invisionware.Net.WebUtils.pdb" target="lib\NetStandard1.3" />
 	</files>
 </package>

@@ -23,7 +23,7 @@ namespace Invisionware.Net.GeoCoding.Google.Model
 	/// Class AddressComponent.
 	/// </summary>
 	[DebuggerDisplay("ShortName = {ShortName}, LongName = {LongName}")]
-	internal class AddressComponent
+	public sealed class AddressComponent
 	{
 		/// <summary>
 		/// Gets or sets the long name.

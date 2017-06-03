@@ -319,7 +319,6 @@ public enum VersionSourceTypes {
 	none,
 	versionfile,
 	assemblyinfo,
-	projectFile,
 	git,
 	tfs
 }

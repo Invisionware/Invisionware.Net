@@ -23,7 +23,7 @@ namespace Invisionware.Net.GeoCoding.Google.Model
 	/// </summary>
 	[DebuggerDisplay("Latitude = {Latitude}, Longitude = {Longitude}")]
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	internal class GoogleLocation : IGeoLocation
+	public sealed class GoogleLocation : IGeoLocation
 	{
 		/// <summary>
 		/// Gets or sets the latitude.
