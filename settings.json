@@ -1,0 +1,39 @@
+{
+	"version": {
+		"VersionFile": "./version.json",
+		"AssemblyInfoFile": "./src/AssemblyInfo.Shared.cs",
+		"LoadFrom": "versionfile",
+		"AutoIncrementVersion": false
+	},
+	"build": {
+		"SourcePath": "./src",
+		"SolutionFileSpec": "./*.sln",
+		"TreatWarningsAsErrors": false,
+	},
+	"xamarin":{
+		"EnableXamarinIOS": false,
+		"MacAgentIPAddress": "",
+		"MacAgentUserName": "",
+		"MacAgentUserPassword": ""
+	},
+	"test": {
+		"SourcePath": "./tests",
+		"ResultsPath": "./artifacts",
+		"AssemblyFileSpec": "*.Tests.dll",
+		"Framework": "NUnit3"
+	},
+	"nuget": {
+		"NuGetConfig": "./.nuget/NuGet.config",
+		"FeedUrl": "https://invisionware.pkgs.visualstudio.com/_packaging/Framework/nuget/v3/index.json",
+		"FeedAPIKey": "VSTS",
+		//"FeedUrl": "e:/Projects/NugetPackages",
+		//"FeedAPIKey": "local",
+		"ArtifactsPath": "./artifacts/packages",
+		"NuspecPath": "./nuspec",
+		"UpdateVersion": true,
+		"UpdateLibraryDependencies": true,
+		"VersionDependencyForLibrary": "greaterthanorequal",
+		"LibraryNamespaceBase": "Invisionware",
+		"LibraryMinVersionDependency": ""
+	}
+}
