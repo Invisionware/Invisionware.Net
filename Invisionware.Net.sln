@@ -13,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".misc", ".misc", "{B67DBE97-2A64-4E27-8878-698FC381DABD}"
 	ProjectSection(SolutionItems) = preProject
 		build.cake = build.cake
+		README.md = README.md
 		settings.json = settings.json
 		version.json = version.json
 	EndProjectSection
