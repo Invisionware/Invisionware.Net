@@ -9,7 +9,9 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</description>
 		<summary>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</summary>
-		<releaseNotes>Initial Version</releaseNotes>
+		<projectUrl>https://github.com/Invisionware/Net</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Net/master/LICENSE</licenseUrl>
+		<releaseNotes></releaseNotes>
 		<copyright>(c) 2016 Invisionware</copyright>
 		<language>en-US</language>
 		<tags>invisionware geocoding address geo</tags>

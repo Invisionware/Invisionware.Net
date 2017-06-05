@@ -14,7 +14,7 @@
     <PackageReference Include="Microsoft.NETCore.Portable.Compatibility" Version="1.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="Serilog" Version="2.4.0" />
-    <PackageReference Include="XLabs.IoC" Version="2.3.0-pre04" />
+    <PackageReference Include="XLabs.IoC" Version="2.3.0-pre05" />
   </ItemGroup>
 
   <ItemGroup>

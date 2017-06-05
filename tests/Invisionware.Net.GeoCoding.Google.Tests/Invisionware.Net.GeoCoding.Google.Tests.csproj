@@ -81,11 +81,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="XLabs.IOC, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.IoC.2.3.0-pre04\lib\netstandard1.0\XLabs.IOC.dll</HintPath>
+      <HintPath>..\..\packages\XLabs.IoC.2.3.0-pre05\lib\netstandard1.0\XLabs.IOC.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XLabs.IOC.Autofac, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.IoC.Autofac.2.3.0-pre04\lib\netstandard1.0\XLabs.IOC.Autofac.dll</HintPath>
+      <HintPath>..\..\packages\XLabs.IoC.Autofac.2.3.0-pre05\lib\netstandard1.0\XLabs.IOC.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

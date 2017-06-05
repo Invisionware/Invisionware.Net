@@ -9,7 +9,9 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Contains various extension methods and supporting classes for System.Net (Cookies, UrlBuilder, HtmlDecode, etc)</description>
 		<summary>Contains various extension methods and supporting classes for System.Net (Cookies, UrlBuilder, HtmlDecode, etc)</summary>
-		<releaseNotes>Initial Version</releaseNotes>
+		<projectUrl>https://github.com/Invisionware/Net</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Net/master/LICENSE</licenseUrl>
+		<releaseNotes></releaseNotes>
 		<copyright>(c) 2016 Invisionware</copyright>
 		<language>en-US</language>
 		<tags>invisionware url http uri json cookie</tags>

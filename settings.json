@@ -24,10 +24,8 @@
 	},
 	"nuget": {
 		"NuGetConfig": "./.nuget/NuGet.config",
-		"FeedUrl": "https://invisionware.pkgs.visualstudio.com/_packaging/Framework/nuget/v3/index.json",
-		"FeedAPIKey": "VSTS",
-		//"FeedUrl": "e:/Projects/NugetPackages",
-		//"FeedAPIKey": "local",
+		"FeedUrl": "https://www.nuget.org/api/v2/package",
+		"FeedAPIKey": "NUGETAPIKEY",
 		"ArtifactsPath": "./artifacts/packages",
 		"NuspecPath": "./nuspec",
 		"UpdateVersion": true,

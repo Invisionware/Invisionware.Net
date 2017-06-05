@@ -267,3 +267,4 @@ tools/packages.config.md5sum
 
 # GIT
 git.password
+nugetapi.key

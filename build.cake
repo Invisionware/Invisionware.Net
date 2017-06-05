@@ -229,6 +229,17 @@ Task("Publish")
 
 	Information("\t{0}", string.Join("\n\t", nupkgFiles.Select(x => x.GetFilename().ToString()).ToList()));
 	
+	if (settings.NuGet.FeedApiKey == "NUGETAPIKEY") 
+	{
+		if (!System.IO.File.Exists("nugetapi.key"))
+		{
+			Error("Could not load nugetapi.key");
+			return;
+		}
+		
+		settings.NuGet.FeedApiKey = System.IO.File.ReadAllText("nugetapi.key");
+	}
+	
 	foreach (var n in nupkgFiles)
 	{
 		try
