@@ -4,7 +4,14 @@ Invisionware Frmaework is a collection of utilities classes, extension methods, 
 ## NET
 This portion of the Invisionware Framework is focused on enhancements to standard Net libraries within the .NET frmaework
 
-Add the following using statement
+[![NuGet](https://img.shields.io/nuget/v/Invisionware.Net.svg)](https://www.nuget.org/packages/Invisionware.Net)
+
+Packages related to Invisionware Net
+```powershell
+Install-Package Invisionware.Net
+```
+
+Then just add the following using statement
 ```c#
 using Invisionware.Net.WebUtils;
 ```
