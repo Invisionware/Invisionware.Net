@@ -12,10 +12,10 @@
 // <summary></summary>
 // ***********************************************************************
 
+using Invisionware.Net.Http;
 using Newtonsoft.Json;
 using RestEase;
 using System;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
