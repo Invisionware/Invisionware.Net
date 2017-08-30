@@ -34,7 +34,7 @@ namespace Invisionware.Net.WebUitls.Tests
 		private QueryStringParamOptions _serializationOptionsUrlQueryParamFunc1 =
 			new QueryStringParamOptions
 			{
-				QueryParmJoinFunc = (paramName, formmattedParam) =>
+				QueryParamJoinFunc = (paramName, formmattedParam) =>
 										{
 											if (paramName == "Param1") return formmattedParam + "Modfied";
 											return formmattedParam;

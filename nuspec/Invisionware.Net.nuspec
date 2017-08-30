@@ -18,103 +18,20 @@
 		<dependencies>
 			<group>
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-			</group>
-			<group targetFramework="NetStandard1.1">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-			</group>
-			<group targetFramework="NetStandard1.2">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-			</group>
-			<group targetFramework="NetStandard1.3">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-			</group>
-			<group targetFramework="MonoAndroid">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-			</group>
-			<group targetFramework="Xamarin.iOS">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-			</group>
-			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile259">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="Microsoft.Net.Http" version="2.2.29" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-			</group>
-			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile111">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-			</group>
-			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile78">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="Microsoft.Net.Http" version="2.2.29" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
+				<dependency id="System.Net.Http" version="4.3.2" />
+				<dependency id="Serilog" version="2.5.0" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
 			</group>
 		</dependencies>
 	</metadata>
 	<files>
-		<!-- Framework: Portable Profile 259 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wpa81+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wpa81+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
-
-		<!-- Framework: Portable Profile 111 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-
-		<!-- Framework: Portable Profile 78 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
-
 		<!-- Framework: NetStandard1.1 -->
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\NetStandard1.1" />
+		<file src="..\src\Invisionware.Net\bin\$Configuration$\netstandard1.1\Invisionware.Net.dll" target="lib\netstandard1.1" />
+		<file src="..\src\Invisionware.Net\bin\$Configuration$\netstandard1.1\Invisionware.Net.pdb" target="lib\netstandard1.1" />
+    
+    <file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\netstandard1.1" />
+    <file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\netstandard1.1" />
 
-	</files>
+  </files>
 </package>

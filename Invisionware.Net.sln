@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{030783D5-8B49-446B-B4BD-623CE9C87C7E}"
 EndProject
@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuspec", ".nuspec", "{A31F
 	ProjectSection(SolutionItems) = preProject
 		nuspec\Invisionware.Net.GeoCoding.nuspec = nuspec\Invisionware.Net.GeoCoding.nuspec
 		nuspec\Invisionware.Net.nuspec = nuspec\Invisionware.Net.nuspec
+		nuspec\Invisionware.Net.RestEase.nuspec = nuspec\Invisionware.Net.RestEase.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".misc", ".misc", "{B67DBE97-2A64-4E27-8878-698FC381DABD}"
@@ -22,13 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FC9A0D21
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeoCoding", "GeoCoding", "{FA43E6FA-F61C-4857-BADF-D55A67C8EC3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.GeoCoding", "src\Invisionware.Net.GeoCoding\Invisionware.Net.GeoCoding.csproj", "{4A9088AD-8447-4812-9800-8E5625CF99D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.GeoCoding", "src\Invisionware.Net.GeoCoding\Invisionware.Net.GeoCoding.csproj", "{4A9088AD-8447-4812-9800-8E5625CF99D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.GeoCoding.Google", "src\Invisionware.Net.GeoCoding.Google\Invisionware.Net.GeoCoding.Google.csproj", "{6BAAE104-3B8A-441F-8736-8DC9F4A27AFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.GeoCoding.Google", "src\Invisionware.Net.GeoCoding.Google\Invisionware.Net.GeoCoding.Google.csproj", "{6BAAE104-3B8A-441F-8736-8DC9F4A27AFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.GeoCoding.Interfaces", "src\Invisionware.Net.GeoCoding.Interfaces\Invisionware.Net.GeoCoding.Interfaces.csproj", "{A01BD832-A9EE-48B7-A311-49110BE604F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.GeoCoding.Interfaces", "src\Invisionware.Net.GeoCoding.Interfaces\Invisionware.Net.GeoCoding.Interfaces.csproj", "{A01BD832-A9EE-48B7-A311-49110BE604F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.WebUtils", "src\Invisionware.Net.WebUtils\Invisionware.Net.WebUtils.csproj", "{C944CD78-EC8C-4A93-B63D-5A3E1C27089D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.WebUtils", "src\Invisionware.Net.WebUtils\Invisionware.Net.WebUtils.csproj", "{C944CD78-EC8C-4A93-B63D-5A3E1C27089D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.WebUitls.Tests", "tests\Invisionware.Net.WebUitls.Tests\Invisionware.Net.WebUitls.Tests.csproj", "{B33CFE0A-B2B3-46C6-AE31-464BDE21B8A9}"
 EndProject
@@ -38,6 +39,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{170B64
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net", "src\Invisionware.Net\Invisionware.Net.csproj", "{76C08B37-980B-43EA-A0FF-DD56EC196CC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.RestEase", "src\Invisionware.Net.RestEase\Invisionware.Net.RestEase.csproj", "{25512DC6-E132-4FF9-A433-5D93EAB72090}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +152,38 @@ Global
 		{3ADF37AB-5A97-45FA-9C36-F4B7B1AED668}.Release|x64.Build.0 = Release|Any CPU
 		{3ADF37AB-5A97-45FA-9C36-F4B7B1AED668}.Release|x86.ActiveCfg = Release|Any CPU
 		{3ADF37AB-5A97-45FA-9C36-F4B7B1AED668}.Release|x86.Build.0 = Release|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Debug|ARM.Build.0 = Debug|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Debug|x64.Build.0 = Debug|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Debug|x86.Build.0 = Debug|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Release|ARM.ActiveCfg = Release|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Release|ARM.Build.0 = Release|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Release|x64.ActiveCfg = Release|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Release|x64.Build.0 = Release|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Release|x86.ActiveCfg = Release|Any CPU
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7}.Release|x86.Build.0 = Release|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Debug|ARM.Build.0 = Debug|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Debug|x64.Build.0 = Debug|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Debug|x86.Build.0 = Debug|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Release|ARM.ActiveCfg = Release|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Release|ARM.Build.0 = Release|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Release|x64.ActiveCfg = Release|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Release|x64.Build.0 = Release|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Release|x86.ActiveCfg = Release|Any CPU
+		{25512DC6-E132-4FF9-A433-5D93EAB72090}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,5 +196,10 @@ Global
 		{C944CD78-EC8C-4A93-B63D-5A3E1C27089D} = {030783D5-8B49-446B-B4BD-623CE9C87C7E}
 		{B33CFE0A-B2B3-46C6-AE31-464BDE21B8A9} = {FC9A0D21-3049-40EF-B6F1-55DA2CB685F3}
 		{3ADF37AB-5A97-45FA-9C36-F4B7B1AED668} = {FC9A0D21-3049-40EF-B6F1-55DA2CB685F3}
+		{76C08B37-980B-43EA-A0FF-DD56EC196CC7} = {030783D5-8B49-446B-B4BD-623CE9C87C7E}
+		{25512DC6-E132-4FF9-A433-5D93EAB72090} = {030783D5-8B49-446B-B4BD-623CE9C87C7E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D31C8A92-3AD8-42D0-8245-C9C28B33C285}
 	EndGlobalSection
 EndGlobal

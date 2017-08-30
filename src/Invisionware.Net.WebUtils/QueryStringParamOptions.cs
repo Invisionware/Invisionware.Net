@@ -10,19 +10,19 @@ namespace Invisionware.Net.WebUtils
 	public class QueryStringParamOptions : DictionarySerializeOptions
     {
         /// <summary>
-        /// Gets or sets the name value seperator.
+        /// Gets or sets the name value separator.
         /// </summary>
-        /// <value>The name value seperator.</value>
-        public string NameValueSeperator { get; set; } = "=";
+        /// <value>The name value separator.</value>
+        public string NameValueSepartor { get; set; } = "=";
 
         /// <summary>
-        /// Gets or sets the query parm join callbackfunction.
+        /// Gets or sets the query param join callbackfunction.
         /// </summary>
-        /// <value>The query parm join function.</value>
+        /// <value>The query param join function.</value>
         /// <example>
         /// QueryParmJoinFunc = (key, keyValue) { if (key == "someParamName") return "or=" + keyValue; else return keyValue;
         /// </example>
-        public Func<string, string, string> QueryParmJoinFunc { get; set; } = (key, keyValue) => keyValue;
+        public Func<string, string, string> QueryParamJoinFunc { get; set; } = (key, keyValue) => keyValue;
 
     }
 }

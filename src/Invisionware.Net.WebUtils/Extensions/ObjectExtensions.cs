@@ -22,7 +22,7 @@ namespace Invisionware.Net.WebUtils.Extensions
 			var properties = obj.SerializeToDictionary(options);
 
 			return string.Join("&", properties
-				.Select(x => options.QueryParmJoinFunc(x.Key, x.Value != null ? string.Concat(x.Key, options.NameValueSeperator, x.Value) : x.Key)));
+				.Select(x => options.QueryParamJoinFunc(x.Key, x.Value != null ? string.Concat(x.Key, options.NameValueSepartor, x.Value) : x.Key)));
 
 		}
 
