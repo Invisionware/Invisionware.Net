@@ -1,11 +1,11 @@
 ﻿using System.Net;
 using System.Net.Http;
-using Invisionware.Net.WebUtils;
 using NUnit.Framework;
 
-namespace Invisionware.Net.WebUitls.Tests
+namespace Invisionware.Net.Tests
 {
 	[TestFixture]
+    [Category("Cookies")]
 	public class CookiesTests
 	{
 		private HttpClient _client;
@@ -35,7 +35,7 @@ namespace Invisionware.Net.WebUitls.Tests
 
 			task.Wait(1000);
 
-			var cookies = task.Result.GetCookieCollection();
+		    var cookies = task.Result.GetCookieCollection();
 
 			Assert.IsNotNull(cookies);
 			Assert.IsTrue(cookies.Count > 0);

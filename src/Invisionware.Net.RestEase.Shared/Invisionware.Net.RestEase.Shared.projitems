@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6a7bc2f0-4f87-46b4-9d1c-87d6e98be1ae</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Invisionware.Net.RestEase.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)RestEaseClientFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IClientFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serializers\HybridResponseDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serializers\JsonNetRequestBodySerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serializers\XmlRequestBodySerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Serializers\" />
+  </ItemGroup>
+</Project>

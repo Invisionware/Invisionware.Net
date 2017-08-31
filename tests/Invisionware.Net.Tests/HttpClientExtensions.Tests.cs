@@ -1,11 +1,13 @@
-﻿using Invisionware.Net.WebUtils;
+﻿
 using NUnit.Framework;
 using System;
 using System.Net.Http;
+using Invisionware.Net.Http;
 
-namespace Invisionware.Net.WebUitls.Tests
+namespace Invisionware.Net.Tests
 {
     [TestFixture]
+    [Category("HttpClient")]
     public class HttpClientExtensions
     {
         [SetUp]

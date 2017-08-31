@@ -18,7 +18,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 
-namespace Invisionware.Net.WebUtils
+namespace Invisionware.Net
 {
 	/// <summary>
 	/// Class Cookies.

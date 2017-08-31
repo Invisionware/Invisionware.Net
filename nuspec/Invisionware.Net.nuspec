@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Invisionware.Net</id>
-		<version>1.1.4</version>
+		<version>1.1.5-pre06</version>
 		<title>Invisionware.Net</title>
 		<authors>ravensorb</authors>
 		<owners>ravensorb</owners>
@@ -19,6 +19,7 @@
 			<group>
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
 				<dependency id="System.Net.Http" version="4.3.2" />
+			  <dependency id="System.Net.Primitives" version="4.3.0" />
 				<dependency id="Serilog" version="2.5.0" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
@@ -33,5 +34,11 @@
     <file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.dll" target="lib\netstandard1.1" />
     <file src="..\src\Invisionware.Net.WebUtils\bin\$Configuration$\netstandard1.1\Invisionware.Net.WebUtils.pdb" target="lib\netstandard1.1" />
 
+	  <!-- Framework: .NET 4.6 -->
+	  <file src="..\src\Invisionware.Net.Net46\bin\$Configuration$\Invisionware.Net.Net46.dll" target="lib\net46" />
+	  <file src="..\src\Invisionware.Net.Net46\bin\$Configuration$\Invisionware.Net.Net46.pdb" target="lib\net46" />
+
+	  <file src="..\src\Invisionware.Net.WebUtils.Net46\bin\$Configuration$\Invisionware.Net.WebUtils.Net46.dll" target="lib\net46" />
+	  <file src="..\src\Invisionware.Net.WebUtils.Net46\bin\$Configuration$\Invisionware.Net.WebUtils.Net46.pdb" target="lib\net46" />
   </files>
 </package>

@@ -31,9 +31,19 @@ namespace Invisionware.Net
         /// <summary>
         /// Initializes the asynchronous.
         /// </summary>
-        /// <param name="token">The token.</param>
         /// <param name="url">The URL.</param>
+        /// <param name="token">The token.</param>
+        /// <param name="enableHttpLogging">if set to <c>true</c> [enable HTTP logging].</param>
         /// <returns></returns>
-        Task<bool> InitializeAsync(string token, string url);
+        Task<bool> InitializeAsync(string url, string token, bool enableHttpLogging = false);
+
+        /// <summary>
+        /// Initializes the asynchronous.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="clientHandler">The client handler.</param>
+        /// <param name="enableHttpLogging">if set to <c>true</c> [enable HTTP logging].</param>
+        /// <returns></returns>
+        Task<bool> InitializeAsync(string url, HttpClientHandler clientHandler, bool enableHttpLogging = false);
     }
 }

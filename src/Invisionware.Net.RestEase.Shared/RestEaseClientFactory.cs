@@ -12,19 +12,19 @@
 // <summary></summary>
 // ***********************************************************************
 
-using Invisionware.Net.Http;
 using Newtonsoft.Json;
 using RestEase;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Invisionware.Net.Http;
 
 namespace Invisionware.Net
 {
     /// <summary>
-    /// Class ClientFactory.
+    /// Class RestEase Client Factory.
     /// </summary>
-    public class ClientFactory<T> : IClientFactory<T>
+    public class RestEaseClientFactory<T> : IClientFactory<T>
     {
         /// <summary>
         /// Gets the HTTP client.
@@ -45,30 +45,56 @@ namespace Invisionware.Net
         public T Api { get; private set; }
 
         /// <summary>
+        /// Initializes the asynchronous.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="token">The token.</param>
+        /// <param name="enableHttpLogging">if set to <c>true</c> [enable HTTP logging].</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">token - token cannot be null</exception>
+        public Task<bool> InitializeAsync(string url, string token, bool enableHttpLogging = false)
+        {
+            if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token), "token cannot be null");
+
+#if DEBUG
+            Serilog.Log.Debug($"Authentication Token: {token}");
+#endif
+
+            return InitializeAsync(url, new AuthenticatedHttpClientHandler(() => Task.FromResult(token))
+            {
+                AuthenticationScheme = "Bearer"
+            });
+        }
+
+        /// <summary>
         /// initialize as an asynchronous operation.
         /// </summary>
-        /// <param name="dataSource">The settings.</param>
-        /// <returns>Task&lt;System.Boolean&gt;.</returns>
-        public async Task<bool> InitializeAsync(string token, string url)
+        /// <param name="url">The URL.</param>
+        /// <param name="clientHandler">The client handler.</param>
+        /// <param name="enableHttpLogging">if set to <c>true</c> [enable HTTP logging].</param>
+        /// <returns>
+        /// Task&lt;System.Boolean&gt;.
+        /// </returns>
+        public Task<bool> InitializeAsync(string url, HttpClientHandler clientHandler, bool enableHttpLogging = false)
         {
             Serilog.Log.Information("Client Factory Initialized");
-            if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token), "Data Source cannot be null");
 
             try
             {
-#if DEBUG
-                Serilog.Log.Debug($"Authentication Token: {token}");
-#endif
-
-                HttpClient =
-                    new HttpClient(
-                        new AuthenticatedHttpClientHandler(() => Task.FromResult(token))
-                        {
-                            AuthenticationScheme = "Bearer"
-                        })
+                if (enableHttpLogging)
+                {
+                    HttpClient = new HttpClient(new HttpLoggingHandler(clientHandler))
                     {
                         BaseAddress = new Uri(url)
                     };
+                }
+                else
+                {
+                    HttpClient = new HttpClient(clientHandler)
+                    {
+                        BaseAddress = new Uri(url)
+                    };
+                }
 
                 ApiClient = new RestClient(HttpClient)
                 {
@@ -93,14 +119,14 @@ namespace Invisionware.Net
 
                 Api = ApiClient.For<T>();
 
-                return true;
+                return Task.FromResult(true);
             }
             catch (Exception ex)
             {
-                Serilog.Log.Error(ex, "Failed to initialize LightSpeed API Client");
+                Serilog.Log.Error(ex, "Failed to initialize API Client");
             }
 
-            return false;
+            return Task.FromResult(false);
         }
     }
 }

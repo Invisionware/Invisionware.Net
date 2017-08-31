@@ -10,7 +10,7 @@ namespace Invisionware.Net
     /// <summary>
     /// Class RestEaseHybridResponseDeserializer.
     /// </summary>
-    /// <seealso cref="RestEase.IResponseDeserializer" />
+    /// <seealso cref="RestEase.ResponseDeserializer" />
     public class RestEaseHybridResponseDeserializer : ResponseDeserializer
     {
         /// <summary>

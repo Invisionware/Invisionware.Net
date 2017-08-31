@@ -29,7 +29,7 @@
 		"ArtifactsPath": "./artifacts/packages",
 		"NuspecPath": "./nuspec",
 		"UpdateVersion": true,
-		"UpdateLibraryDependencies": true,
+		"UpdateLibraryDependencies": false,
 		"VersionDependencyForLibrary": "greaterthanorequal",
 		"LibraryNamespaceBase": "Invisionware",
 		"LibraryMinVersionDependency": ""

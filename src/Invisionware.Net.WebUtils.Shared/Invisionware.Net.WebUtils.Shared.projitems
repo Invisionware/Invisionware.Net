@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>5334debc-d11e-4b35-b0d2-5f597a4abb6c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Invisionware.Net.WebUtils.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\HtmlEncodingServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\HtmlEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\HtmlEntityDecoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\HtmlEntityEncoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\HtmlEntityTokenizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Token.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\TokenType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\DictionaryExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ObjectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QueryStringParamOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UrlBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebUtility.cs" />
+  </ItemGroup>
+</Project>

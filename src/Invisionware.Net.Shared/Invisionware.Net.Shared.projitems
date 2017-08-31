@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>441eaa6a-41e4-405a-856d-a8d521d7a3b8</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Invisionware.Net.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CookieExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\AuthenticatedHttpClientHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\HttpClientExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\HttpLoggingHandler.cs" />
+  </ItemGroup>
+</Project>
