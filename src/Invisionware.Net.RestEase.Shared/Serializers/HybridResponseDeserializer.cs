@@ -57,6 +57,8 @@ namespace Invisionware.Net
                     return this.DeserializeJson<T>(content);
                 case "application/xml":
                     return this.DeserializeXml<T>(content);
+				//default:
+				//	return base.Deserialize<T>(content, response, new ResponseDeserializerInfo());
             }
 
             throw new ArgumentException("Response was not JSON or XML");

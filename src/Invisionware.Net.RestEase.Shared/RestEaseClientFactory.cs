@@ -21,112 +21,155 @@ using Invisionware.Net.Http;
 
 namespace Invisionware.Net
 {
-    /// <summary>
-    /// Class RestEase Client Factory.
-    /// </summary>
-    public class RestEaseClientFactory<T> : IClientFactory<T>
-    {
-        /// <summary>
-        /// Gets the HTTP client.
-        /// </summary>
-        /// <value>The HTTP client.</value>
-        public HttpClient HttpClient { get; private set; }
+	/// <summary>
+	/// Class RestEase Client Factory.
+	/// </summary>
+	public class RestEaseClientFactory<T> : IRestEaseClientFactory<T>
+	{
+		/// <summary>
+		/// Gets the options.
+		/// </summary>
+		/// <value>
+		/// The options.
+		/// </value>
+		public RestEaseClientFactoryOptions Options { get; private set; }
 
-        /// <summary>
-        /// Gets the API client.
-        /// </summary>
-        /// <value>The API client.</value>
-        public RestClient ApiClient { get; private set; }
+		/// <summary>
+		/// Gets the HTTP client.
+		/// </summary>
+		/// <value>The HTTP client.</value>
+		public HttpClient HttpClient { get; private set; }
 
-        /// <summary>
-        /// Gets the account API.
-        /// </summary>
-        /// <value>The account API.</value>
-        public T Api { get; private set; }
+		/// <summary>
+		/// Gets the API client.
+		/// </summary>
+		/// <value>The API client.</value>
+		public RestClient ApiClient { get; private set; }
 
-        /// <summary>
-        /// Initializes the asynchronous.
-        /// </summary>
-        /// <param name="url">The URL.</param>
-        /// <param name="token">The token.</param>
-        /// <param name="enableHttpLogging">if set to <c>true</c> [enable HTTP logging].</param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentNullException">token - token cannot be null</exception>
-        public Task<bool> InitializeAsync(string url, string token, bool enableHttpLogging = false)
-        {
-            if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token), "token cannot be null");
+		/// <summary>
+		/// Gets the account API.
+		/// </summary>
+		/// <value>The account API.</value>
+		public T Api { get; private set; }
+
+		/// <summary>
+		/// Initializes the asynchronous.
+		/// </summary>
+		/// <param name="url">The URL.</param>
+		/// <param name="token">The token.</param>
+		/// <param name="options">The options.</param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException">token - token cannot be null</exception>
+		public Task<bool> InitializeAsync(string url, string token, RestEaseClientFactoryOptions options = null)
+		{
+			if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token), "token cannot be null");
 
 #if DEBUG
-            Serilog.Log.Debug($"Authentication Token: {token}");
+			Serilog.Log.Debug($"Authentication Token: {token}");
 #endif
 
-            return InitializeAsync(url, new AuthenticatedHttpClientHandler(() => Task.FromResult(token))
-            {
-                AuthenticationScheme = "Bearer"
-            });
-        }
+			return InitializeAsync(url, new AuthenticatedHttpClientHandler(() => Task.FromResult(token))
+			{
+				AuthenticationScheme = "Bearer"
+			}, options);
+		}
 
-        /// <summary>
-        /// initialize as an asynchronous operation.
-        /// </summary>
-        /// <param name="url">The URL.</param>
-        /// <param name="clientHandler">The client handler.</param>
-        /// <param name="enableHttpLogging">if set to <c>true</c> [enable HTTP logging].</param>
-        /// <returns>
-        /// Task&lt;System.Boolean&gt;.
-        /// </returns>
-        public Task<bool> InitializeAsync(string url, HttpClientHandler clientHandler, bool enableHttpLogging = false)
-        {
-            Serilog.Log.Information("Client Factory Initialized");
+		/// <summary>
+		/// initialize as an asynchronous operation.
+		/// </summary>
+		/// <param name="url">The URL.</param>
+		/// <param name="clientHandler">The client handler.</param>
+		/// <param name="options">The options.</param>
+		/// <returns>
+		/// Task&lt;System.Boolean&gt;.
+		/// </returns>
+		public Task<bool> InitializeAsync(string url, HttpClientHandler clientHandler, RestEaseClientFactoryOptions options = null)
+		{
+			Serilog.Log.Information("Client Factory Initialized");
 
-            try
-            {
-                if (enableHttpLogging)
-                {
-                    HttpClient = new HttpClient(new HttpLoggingHandler(clientHandler))
-                    {
-                        BaseAddress = new Uri(url)
-                    };
-                }
-                else
-                {
-                    HttpClient = new HttpClient(clientHandler)
-                    {
-                        BaseAddress = new Uri(url)
-                    };
-                }
+			HttpClient httpClient;
 
-                ApiClient = new RestClient(HttpClient)
-                {
-                    ResponseDeserializer = new RestEaseHybridResponseDeserializer(),
-                    RequestBodySerializer = new JsonRequestBodySerializer()
-                    {
-                        JsonSerializerSettings =
-                            new JsonSerializerSettings
-                            {
-                                DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate,
-                                NullValueHandling = NullValueHandling.Ignore,
-                                Formatting = Formatting.Indented
-                            }
-                    },
-                    JsonSerializerSettings = new JsonSerializerSettings
-                    {
-                        DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate,
-                        NullValueHandling = NullValueHandling.Ignore,
-                        Formatting = Formatting.Indented
-                    }
-                };
+			if (options?.EnableHttpLogging == null)
+			{
+				httpClient = new HttpClient(new HttpLoggingHandler(clientHandler))
+				{
+					BaseAddress = new Uri(url)
+				};
+			}
+			else
+			{
+				httpClient = new HttpClient(clientHandler)
+				{
+					BaseAddress = new Uri(url)
+				};
+			}
 
-                Api = ApiClient.For<T>();
+			return InitializeAsync(httpClient, options);
+		}
 
-                return Task.FromResult(true);
-            }
-            catch (Exception ex)
-            {
-                Serilog.Log.Error(ex, "Failed to initialize API Client");
-            }
+		/// <summary>
+		/// Initializes the asynchronous.
+		/// </summary>
+		/// <param name="httpClient">The HTTP client.</param>
+		/// <param name="options">The options.</param>
+		/// <returns></returns>
+		public Task<bool> InitializeAsync(HttpClient httpClient, RestEaseClientFactoryOptions options = null)
+		{
+			Serilog.Log.Information("Client Factory Initialized");
 
-            return Task.FromResult(false);
-        }
-    }
+			try
+			{
+				HttpClient = httpClient;
+				Options = options;
+
+				ApiClient = new RestClient(HttpClient)
+				{
+					ResponseDeserializer = Options?.ResponseDeserializer,
+					RequestBodySerializer= Options?.JsonRequestBodySerializer,
+					JsonSerializerSettings = Options?.JsonSerializerSettings
+				};
+
+				Api = ApiClient.For<T>();
+
+				return Task.FromResult(true);
+			}
+			catch (Exception ex)
+			{
+				Serilog.Log.Error(ex, "Failed to initialize API Client");
+			}
+
+			return Task.FromResult(false);
+		}
+	}
+
+	public class RestEaseClientFactoryOptions
+	{
+		/// <summary>
+		/// Gets or sets a value indicating whether [enable HTTP logging].
+		/// </summary>
+		/// <value>
+		///   <c>true</c> if [enable HTTP logging]; otherwise, <c>false</c>.
+		/// </value>
+		public bool EnableHttpLogging { get; set; } = false;
+
+		public RestEaseHybridResponseDeserializer ResponseDeserializer { get; set; } = new RestEaseHybridResponseDeserializer();
+
+		public JsonRequestBodySerializer JsonRequestBodySerializer { get; set; } = new JsonRequestBodySerializer()
+		{
+			JsonSerializerSettings =
+				new JsonSerializerSettings
+				{
+					DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate,
+					NullValueHandling = NullValueHandling.Ignore,
+					Formatting = Formatting.Indented
+				}
+		};
+
+		public JsonSerializerSettings JsonSerializerSettings { get; set; } = new JsonSerializerSettings
+		{
+			DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate,
+			NullValueHandling = NullValueHandling.Ignore,
+			Formatting = Formatting.Indented
+		};
+	}
 }

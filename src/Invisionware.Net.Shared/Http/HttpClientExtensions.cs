@@ -7,7 +7,13 @@ namespace Invisionware.Net.Http
 {
     public static class HttpClientExtensions
     {
-        public static Task<Stream> GetFileAsync(this HttpClient client, Uri requestUri)
+		/// <summary>
+		/// Gets the file asynchronous.
+		/// </summary>
+		/// <param name="client">The client.</param>
+		/// <param name="requestUri">The request URI.</param>
+		/// <returns></returns>
+		public static Task<Stream> GetFileAsync(this HttpClient client, Uri requestUri)
         {
             var result = client.GetAsync(requestUri).ContinueWith(
                 requestTask =>
@@ -22,7 +28,13 @@ namespace Invisionware.Net.Http
             return result.Unwrap();
         }
 
-        public static Task<string> GetFileAsBase64Async(this HttpClient client, Uri requestUri)
+		/// <summary>
+		/// Gets the file as base64 asynchronous.
+		/// </summary>
+		/// <param name="client">The client.</param>
+		/// <param name="requestUri">The request URI.</param>
+		/// <returns></returns>
+		public static Task<string> GetFileAsBase64Async(this HttpClient client, Uri requestUri)
         {
             var result = client.GetFileAsync(requestUri).ContinueWith(
                 requestTask =>

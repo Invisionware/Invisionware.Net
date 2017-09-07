@@ -10,7 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)RestEaseClientFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IClientFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IRestEaseClientFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serializers\HybridResponseDeserializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serializers\JsonNetRequestBodySerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serializers\XmlRequestBodySerializer.cs" />
