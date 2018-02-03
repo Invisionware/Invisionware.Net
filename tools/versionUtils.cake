@@ -1,7 +1,9 @@
 #addin "Cake.Json"
 #addin "Cake.FileHelpers"
-
+#addin "nuget:https://www.nuget.org/api/v2?package=Newtonsoft.Json"
 #tool nuget:?package=GitVersion.CommandLine
+
+using Newtonsoft.Json;
 
 public class VersionUtils
 {
@@ -60,7 +62,7 @@ public class VersionUtils
 		
 		if (!string.IsNullOrEmpty(assemblyInfoFile) || !context.FileExists(assemblyInfoFile))
 		{
-			context.Error("AssemblyInfo file does not exist");
+			context.Warning("AssemblyInfo file does not exist");
 			return null;
 		}
 
@@ -85,7 +87,7 @@ public class VersionUtils
 	
 	private static VersionInfo LoadVersionFromGit(ICakeContext context)
 	{
-		context.Information("Fetching Verson Infop from Git");
+		context.Information("Fetching Version Info from Git");
 
 		try {
 			GitVersion assertedVersions = context.GitVersion(new GitVersionSettings

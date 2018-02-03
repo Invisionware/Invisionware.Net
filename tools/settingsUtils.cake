@@ -1,10 +1,12 @@
 #addin "Cake.Json"
+#addin "nuget:https://www.nuget.org/api/v2?package=Newtonsoft.Json"
+using Newtonsoft.Json;
 
 public class SettingsUtils
 {
 	public static Settings LoadSettings(ICakeContext context)
 	{
-		var settingsFile = context.Argument<string>("settingsFile", ".\\settings.json");
+		var settingsFile = context.Argument<string>("settingsFile", ".\\build.settings.json");
 		
 		context.Information("Loading Settings: {0}", settingsFile);
 
@@ -30,7 +32,11 @@ public class SettingsUtils
 		obj.ExecutePackage 		= !GetBoolArgument(context, "skipPackage", !obj.ExecutePackage);
 
 		obj.ExecuteUnitTest 	= GetBoolArgument(context, "unitTest", obj.ExecuteUnitTest); 
+		obj.ExecuteUnitTest 	= GetBoolArgument(context, "unitTests", obj.ExecuteUnitTest); 
 		obj.ExecuteUnitTest 	= !GetBoolArgument(context, "skipUnitTest", !obj.ExecuteUnitTest); 
+		obj.ExecuteUnitTest 	= !GetBoolArgument(context, "skipUnitTests", !obj.ExecuteUnitTest); 
+		obj.ExecuteUnitTest 	= !GetBoolArgument(context, "skipTest", !obj.ExecuteUnitTest); 
+		obj.ExecuteUnitTest 	= !GetBoolArgument(context, "skipTests", !obj.ExecuteUnitTest); 
 
 		obj.ExecuteClean 		= GetBoolArgument(context, "clean", obj.ExecuteClean); 
 		obj.ExecuteClean 		= !GetBoolArgument(context, "skipClean", !obj.ExecuteClean); 
@@ -102,8 +108,8 @@ public class Settings
 		
 		Target = "DisplayHelp";
 		Configuration = "Release";
-		SettingsFile = ".\\settings.json";
-		VersionFile = ".\\version.json";
+		SettingsFile = ".\\build.settings.json";
+		VersionFile = ".\\build.version.json";
 		
 		Version = new VersionSettings();
 		Build = new BuildSettings();
@@ -144,9 +150,9 @@ public class Settings
 		
 		Version.Display(context);
 		Build.Display(context);
-		Xamarin.Display(context);
-		Test.Display(context);
-		NuGet.Display(context);
+		Xamarin?.Display(context);
+		Test?.Display(context);
+		NuGet?.Display(context);
 	}
 }
 
@@ -177,6 +183,8 @@ public class BuildSettings
 	public BuildSettings()
 	{
 		SourcePath = "./source";
+		ArtifactsPath = "./artifacts";
+		BuildOutputPath = "./src/**/[CONFIGURATION]";
 		SolutionFileSpec = "*.sln";
 		TreatWarningsAsErrors = false;
 		MaxCpuCount = 0;
@@ -185,6 +193,8 @@ public class BuildSettings
 	public string SourcePath {get;set;}
 	public string SolutionFileSpec {get;set;}
 	public bool TreatWarningsAsErrors {get;set;}
+	public string ArtifactsPath {get;set;}
+	public string BuildOutputPath {get;set;}
 	public int MaxCpuCount {get;set;}
 	
 	public string SolutionFilePath {
@@ -199,6 +209,7 @@ public class BuildSettings
 	{
 		context.Information("Build Settings:");
 		context.Information("\tSource Path: {0}", SourcePath);
+		context.Information("\tArtifacts Path: {0}", ArtifactsPath);
 		context.Information("\tSolution File Spec: {0}", SolutionFileSpec);
 		context.Information("\tSolution File Path: {0}", SolutionFilePath);
 		context.Information("\tTreat Warnings As Errors: {0}", TreatWarningsAsErrors);

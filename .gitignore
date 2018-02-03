@@ -143,7 +143,7 @@ publish/
 *.azurePubxml
 # TODO: Comment the next line if you want to checkin your web deploy settings
 # but database connection strings (with potential passwords) will be unencrypted
-*.pubxml
+#*.pubxml
 *.publishproj
 
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
@@ -189,6 +189,7 @@ ClientBin/
 *~
 *.dbmdl
 *.dbproj.schemaview
+*.jfm
 *.pfx
 *.publishsettings
 node_modules/
@@ -251,12 +252,15 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+																		 
+# CodeRush
+.cr/
 
 # CAKE
 tools/Addins/
 tools/Cake/
-tools/GitVersion.CommandLine
-tools/NUnit.ConsoleRunner
+tools/GitVersion.CommandLine*
+tools/NUnit.ConsoleRunner*
 tools/nuget.exe
 tools/CredentialProvider.VSS.exe
 tools/VSS.NuGet.AuthHelper.exe
@@ -266,5 +270,9 @@ tools/VSS.NuGet.AuthHelper.exe
 tools/packages.config.md5sum
 
 # GIT
-git.password
-nugetapi.key
+/git.password
+/nugetapi.key
+
+# Python Tools for Visual Studio (PTVS)
+__pycache__/
+*.pyc

@@ -26,6 +26,15 @@ var solutionPaths = solutions.Select(solution => solution.GetDirectory());
 
 Setup((c) =>
 {
+	c.Information("Command Line:");
+	c.Information("\tConfiguration: {0}", settings.Configuration);
+	c.Information("\tSettings Files: {0}", settings.SettingsFile);
+	c.Information("\tExecute Build: {0}", settings.ExecuteBuild);
+	c.Information("\tExecute Clean: {0}", settings.ExecuteClean);
+	c.Information("\tExecute Unit Tests: {0}", settings.ExecuteUnitTest);
+	c.Information("\tExecute Package: {0}", settings.ExecutePackage);
+	c.Information("\tSolutions Found: {0}", solutions.Count);
+
 	// Executed BEFORE the first task.
 	settings.Display(c);
 	versionInfo.Display(c);
@@ -101,11 +110,18 @@ Task("Restore")
 	.WithCriteria(settings.ExecuteBuild)
 	.Does(() =>
 {
+	
 	// Restore all NuGet packages.
 	foreach(var solution in solutions)
 	{
 		Information("Restoring {0}...", solution);
-		NuGetRestore(solution, new NuGetRestoreSettings { ConfigFile = settings.NuGet.NuGetConfig });
+
+		if (!string.IsNullOrEmpty(settings.NuGet.NuGetConfig) && FileExists(settings.NuGet.NuGetConfig))
+		{
+			NuGetRestore(solution, new NuGetRestoreSettings { ConfigFile = settings.NuGet.NuGetConfig });
+		} else {
+			NuGetRestore(solution);
+		}
 	}
 });
 
@@ -175,7 +191,28 @@ Task("UnitTest")
 	}
 });
 
-Task("Package")
+Task("Publish")
+	.Description("Publish application to the artifacts folder")
+	.IsDependentOn("UnitTest")
+	.Does(() =>
+{
+	var artifactsPath = Directory(settings.Build.ArtifactsPath.Replace("[CONFIGURATION]", settings.Configuration));
+	var buildOutputPath = settings.Build.BuildOutputPath.Replace("[CONFIGURATION]", settings.Configuration);
+
+	Information("Copying Files from {0} to {1}", buildOutputPath, artifactsPath, settings.Configuration);
+
+	if (!DirectoryExists(artifactsPath))
+	{
+		CreateDirectory(artifactsPath);
+	} else {
+		Information("\tCleaning Publish Path");
+		CleanDirectories(artifactsPath);
+	}
+
+	CopyFiles(buildOutputPath + "/*", artifactsPath, true);
+});
+
+Task("Nuget-Package")
 	.Description("Packages all nuspec files into nupkg packages.")
 	.WithCriteria(settings.ExecutePackage)
 	.IsDependentOn("UnitTest")
@@ -209,9 +246,9 @@ Task("Package")
 	}
 });
 
-Task("Publish")
+Task("Nuget-Publish")
 	.Description("Publishes all of the nupkg packages to the nuget server. ")
-	.IsDependentOn("Package")
+	.IsDependentOn("Nuget-Package")
 	.Does(() =>
 {
 	var authError = false;
@@ -244,16 +281,22 @@ Task("Publish")
 	{
 		try
 		{		
-			NuGetPush(n, new NuGetPushSettings {
+			var ngps = new NuGetPushSettings {
 				Source = settings.NuGet.FeedUrl,
 				ApiKey = settings.NuGet.FeedApiKey,
-				ConfigFile = settings.NuGet.NuGetConfig,
 				Verbosity = NuGetVerbosity.Normal
-			});
+			};
+			
+			if (!string.IsNullOrEmpty(settings.NuGet.NuGetConfig) && FileExists(settings.NuGet.NuGetConfig))
+			{
+				ngps.ConfigFile = settings.NuGet.NuGetConfig;
+			}
+			
+			NuGetPush(n, ngps);
 		}
 		catch (Exception ex)
 		{
-			Information("\tFailed to published: ", ex.Message);
+			Information("\tFailed to published: ", ex.ToString());
 			
 			if (ex.Message.Contains("403")) { authError = true; }
 		}
@@ -265,7 +308,7 @@ Task("Publish")
 	}
 });
 
-Task("UnPublish")
+Task("Nuget-UnPublish")
 	.Description("UnPublishes all of the current nupkg packages from the nuget server. Issue: versionToDelete must use : instead of . due to bug in cake")
 	.Does(() =>
 {
@@ -286,7 +329,7 @@ Task("UnPublish")
 			args = args + string.Format(" -ApiKey {0}", settings.NuGet.FeedApiKey);
 		//}
 				
-		if (!string.IsNullOrEmpty(settings.NuGet.NuGetConfig)) {
+		if (!string.IsNullOrEmpty(settings.NuGet.NuGetConfig) && FileExists(settings.NuGet.NuGetConfig)) {
 			args = args + string.Format(" -Config {0}", settings.NuGet.NuGetConfig);
 		}
 		

@@ -1,16 +1,18 @@
 {
 	"version": {
-		"VersionFile": "./version.json",
-		"AssemblyInfoFile": "./src/AssemblyInfo.Shared.cs",
+		"VersionFile": "./build.version.json",
+		"AssemblyInfoFile": null,
 		"LoadFrom": "versionfile",
 		"AutoIncrementVersion": false
 	},
 	"build": {
 		"SourcePath": "./src",
 		"SolutionFileSpec": "./*.sln",
-		"TreatWarningsAsErrors": false,
+		"BuildOutPutPath": "", 
+		"ArtifactsPath": "./artifacts/artifacts",
+		"TreatWarningsAsErrors": false
 	},
-	"xamarin":{
+	"xamarin": {
 		"EnableXamarinIOS": false,
 		"MacAgentIPAddress": "",
 		"MacAgentUserName": "",
@@ -23,15 +25,15 @@
 		"Framework": "NUnit3"
 	},
 	"nuget": {
-		"NuGetConfig": "./.nuget/NuGet.config",
-		"FeedUrl": "https://www.nuget.org/api/v2/package",
+		"NuGetConfig": "",
+		"FeedUrl": "https://www.nuget.org",
 		"FeedAPIKey": "NUGETAPIKEY",
 		"ArtifactsPath": "./artifacts/packages",
 		"NuspecPath": "./nuspec",
 		"UpdateVersion": true,
-		"UpdateLibraryDependencies": false,
+		"UpdateLibraryDependencies": true,
 		"VersionDependencyForLibrary": "greaterthanorequal",
-		"LibraryNamespaceBase": "Invisionware",
+		"LibraryNamespaceBase": "Invisionware.Net",
 		"LibraryMinVersionDependency": ""
 	}
 }
