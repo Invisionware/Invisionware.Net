@@ -4,15 +4,16 @@
 		<id>Invisionware.Net</id>
 		<version>1.1.5-pre07</version>
 		<title>Invisionware.Net</title>
-		<authors>ravensorb</authors>
-		<owners>ravensorb</owners>
+		<authors>Invisionware</authors>
+		<owners>Invisionware</owners>
+		<projectUrl>https://github.com/Invisionware/Net</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Net/master/LICENSE</licenseUrl>
+		<iconUrl>https://github.com/Invisionware/Net/raw/master/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Contains various extension methods and supporting classes for System.Net (Cookies, UrlBuilder, HtmlDecode, etc)</description>
 		<summary>Contains various extension methods and supporting classes for System.Net (Cookies, UrlBuilder, HtmlDecode, etc)</summary>
-		<projectUrl>https://github.com/Invisionware/Net</projectUrl>
-		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Net/master/LICENSE</licenseUrl>
 		<releaseNotes></releaseNotes>
-		<copyright>(c) 2016 Invisionware</copyright>
+		<copyright>Copyright © 2018 Invisionware</copyright>
 		<language>en-US</language>
 		<tags>invisionware url http uri json cookie</tags>
 		<dependencies>

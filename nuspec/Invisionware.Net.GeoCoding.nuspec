@@ -4,15 +4,16 @@
 		<id>Invisionware.Net.GeoCoding</id>
 		<version>1.1.5-pre07</version>
 		<title>Invisionware.Net.GeoCoding</title>
-		<authors>ravensorb</authors>
-		<owners>ravensorb</owners>
+		<authors>Invisionware</authors>
+		<owners>Invisionware</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</description>
 		<summary>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</summary>
 		<projectUrl>https://github.com/Invisionware/Net</projectUrl>
 		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Net/master/LICENSE</licenseUrl>
+		<iconUrl>https://github.com/Invisionware/Net/raw/master/logo.png</iconUrl>
 		<releaseNotes></releaseNotes>
-		<copyright>(c) 2016 Invisionware</copyright>
+		<copyright>Copyright © 2018 Invisionware</copyright>
 		<language>en-US</language>
 		<tags>invisionware geocoding address geo</tags>
 		<dependencies>
@@ -27,7 +28,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 
 			</group>
 			<group targetFramework="NetStandard1.1">
@@ -41,7 +42,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 			<group targetFramework="NetStandard1.2">
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
@@ -54,7 +55,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 			<group targetFramework="NetStandard1.3">
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
@@ -67,7 +68,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 			<group targetFramework="MonoAndroid">
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
@@ -80,7 +81,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 			<group targetFramework="Xamarin.iOS">
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
@@ -93,7 +94,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile259">
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
@@ -103,7 +104,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile111">
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
@@ -116,7 +117,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile78">
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
@@ -126,7 +127,7 @@
 				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
 
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.4" />
+				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 		</dependencies>
 	</metadata>
