@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Invisionware.Net.RestEase</id>
-		<version>1.1.5-pre07</version>
+		<version>1.0.0</version>
 		<title>Invisionware.Net.RestEase</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
@@ -22,7 +22,7 @@
 				<dependency id="Serilog" version="2.5.0" />
 				<dependency id="RestEase" version="1.4.3" />
 				<dependency id="System.Xml.XmlSerializer" version="4.3.0" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
+				<dependency id="Invisionware.Net" version="1.1.5" />
 			</group>
 		</dependencies>
 	</metadata>

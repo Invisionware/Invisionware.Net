@@ -62,7 +62,7 @@ public class VersionUtils
 		
 		if (!string.IsNullOrEmpty(assemblyInfoFile) || !context.FileExists(assemblyInfoFile))
 		{
-			context.Warning("AssemblyInfo file does not exist");
+			context.Error("AssemblyInfo file does not exist");
 			return null;
 		}
 
@@ -87,7 +87,7 @@ public class VersionUtils
 	
 	private static VersionInfo LoadVersionFromGit(ICakeContext context)
 	{
-		context.Information("Fetching Version Info from Git");
+		context.Information("Fetching Verson Infop from Git");
 
 		try {
 			GitVersion assertedVersions = context.GitVersion(new GitVersionSettings
