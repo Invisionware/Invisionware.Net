@@ -35,7 +35,6 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 			_provider.Initialize(coderProvider =>
 			{
 				coderProvider.APIKey = "AIzaSyC6J16WxOGEnOzFzMiYnq6pDIMpLjHCSbI";
-				//coderProvider.APIKey = "AIzaSyAMXZ764BOsGdo8RFXsWTneMYows3zdmrg";
 			});
 		}
 
