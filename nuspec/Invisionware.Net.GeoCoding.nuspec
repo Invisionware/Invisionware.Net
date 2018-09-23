@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Invisionware.Net.GeoCoding</id>
-		<version>1.1.5</version>
+		<version>1.1.6</version>
 		<title>Invisionware.Net.GeoCoding</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
@@ -18,150 +18,31 @@
 		<tags>invisionware geocoding address geo</tags>
 		<dependencies>
 			<group>
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
+				<dependency id="Newtonsoft.Json" version="11.0.2" />
 				<dependency id="System.Net.Http" version="4.1.0" />
 				<dependency id="System.Collections" version="4.3.0" />
 				<dependency id="System.Threading" version="4.3.0" />
 				<dependency id="System.Reflection" version="4.3.0" />
 				<dependency id="Serilog" version="2.2.1" />
 
-				<dependency id="Invisionware.Ioc" version="1.0.1" />
+				<dependency id="Invisionware.IoC" version="1.0.1" />
 				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5" />
+				<dependency id="Invisionware.Net" version="1.1.7" />
 
-			</group>
-			<group targetFramework="NetStandard1.1">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="System.Collections" version="4.3.0" />
-				<dependency id="System.Threading" version="4.3.0" />
-				<dependency id="System.Reflection" version="4.3.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
-			</group>
-			<group targetFramework="NetStandard1.2">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="System.Collections" version="4.3.0" />
-				<dependency id="System.Threading" version="4.3.0" />
-				<dependency id="System.Reflection" version="4.3.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
-			</group>
-			<group targetFramework="NetStandard1.3">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="System.Collections" version="4.3.0" />
-				<dependency id="System.Threading" version="4.3.0" />
-				<dependency id="System.Reflection" version="4.3.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
-			</group>
-			<group targetFramework="MonoAndroid">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="System.Collections" version="4.3.0" />
-				<dependency id="System.Threading" version="4.3.0" />
-				<dependency id="System.Reflection" version="4.3.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
-			</group>
-			<group targetFramework="Xamarin.iOS">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="System.Collections" version="4.3.0" />
-				<dependency id="System.Threading" version="4.3.0" />
-				<dependency id="System.Reflection" version="4.3.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
-			</group>
-			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile259">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="Microsoft.Net.Http" version="2.2.29" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
-			</group>
-			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile111">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="System.Net.Http" version="4.1.0" />
-				<dependency id="System.Collections" version="4.3.0" />
-				<dependency id="System.Threading" version="4.3.0" />
-				<dependency id="System.Reflection" version="4.3.0" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
-			</group>
-			<group targetFramework=".NETPortable,Version=v4.5,Profile=Profile78">
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="Microsoft.Net.Http" version="2.2.29" />
-				<dependency id="Serilog" version="2.2.1" />
-
-				<dependency id="XLabs.Ioc" version="2.3.0-pre04" />
-
-				<dependency id="Invisionware.Serialization" version="1.1.4" />
-				<dependency id="Invisionware.Net" version="1.1.5-pre07" />
 			</group>
 		</dependencies>
 	</metadata>
 	<files>
 
-		<!-- Framework: Portable Profile 259 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wpa81+MonoAndroid10+xamarinios10+MonoTouch10" />
+		<!-- Framework: NetStandard2.0 -->
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard2.0\Invisionware.Net.GeoCoding.dll" target="lib\NetStandard2.0" />
+		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard2.0\Invisionware.Net.GeoCoding.pdb" target="lib\NetStandard2.0" />
 
-		<!-- Framework: Portable Profile 111 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wpa81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\NetStandard2.0" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\NetStandard2.0" />
 
-		<!-- Framework: Portable Profile 78 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.dll" target="lib\portable-net45+win8+wp8+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.dll" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\portable-net45+win8+wp81+monoandroid+monotouch+xamarinios+xamarinmac" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard2.0\Invisionware.Net.GeoCoding.Google.dll" target="lib\NetStandard2.0" />
+		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard2.0\Invisionware.Net.GeoCoding.Google.pdb" target="lib\NetStandard2.0" />
 
-		<!-- Framework: NetStandard1.1 -->
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.dll" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.pdb" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.dll" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Google\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Google.pdb" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.dll" target="lib\NetStandard1.1" />
-		<file src="..\src\Invisionware.Net.GeoCoding.Interfaces\bin\$Configuration$\netstandard1.1\Invisionware.Net.GeoCoding.Interfaces.pdb" target="lib\NetStandard1.1" />
 	</files>
 </package>

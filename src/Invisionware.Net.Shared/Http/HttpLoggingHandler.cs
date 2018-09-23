@@ -126,7 +126,7 @@ namespace Invisionware.Net.Http
         /// <summary>
         /// The types
         /// </summary>
-        readonly string[] types = new[] { "html", "text", "xml", "json", "txt" };
+        readonly string[] types = { "html", "text", "xml", "json", "txt" };
 
         /// <summary>
         /// Determines whether [is text based content type] [the specified headers].

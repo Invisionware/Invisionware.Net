@@ -54,7 +54,7 @@ namespace Invisionware.Net.WebUtils
 			// do on empty, however, this mimics the platform implementation
 			if (value == null) return;
 
-			if (output == null) throw new ArgumentNullException("output");
+			if (output == null) throw new ArgumentNullException(nameof(output));
 
 			HtmlEncodingServices.Encode(value, output);
 		}
@@ -89,7 +89,7 @@ namespace Invisionware.Net.WebUtils
 			// do on empty, however, this mimics the platform implementation
 			if (value == null) return;
 
-			if (output == null) throw new ArgumentNullException("output");
+			if (output == null) throw new ArgumentNullException(nameof(output));
 
 			HtmlEncodingServices.Decode(value, output);
 		}
@@ -135,7 +135,7 @@ namespace Invisionware.Net.WebUtils
 
 			var lnStart = index + 2 + key.Length;
 
-			var index2 = urlEncoded.IndexOf("&", lnStart);
+			var index2 = urlEncoded.IndexOf("&", lnStart, StringComparison.Ordinal);
 			if (index2 < 0)
 				return "";
 

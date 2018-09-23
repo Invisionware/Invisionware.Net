@@ -20,7 +20,7 @@
 	"test": {
 		"SourcePath": "./tests",
 		"ResultsPath": "./artifacts",
-		"AssemblyFileSpec": "*.UnitTests.dll",
+		"AssemblyFileSpec": "*.Tests.dll",
 		"Framework": "NUnit3"
 	},
 	"nuget": {

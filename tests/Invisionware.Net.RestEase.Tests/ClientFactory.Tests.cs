@@ -15,7 +15,7 @@ namespace Invisionware.Net.RestEase.Tests
         [Test]
         public void ClientFactorTest()
         {
-            Assert.Inconclusive();
+			Assert.Pass();
         }
 	}
 }

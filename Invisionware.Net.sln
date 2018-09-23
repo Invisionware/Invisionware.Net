@@ -14,9 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".misc", ".misc", "{B67DBE97-2A64-4E27-8878-698FC381DABD}"
 	ProjectSection(SolutionItems) = preProject
 		build.cake = build.cake
+		build.settings.json = build.settings.json
+		build.version.json = build.version.json
 		README.md = README.md
-		settings.json = settings.json
-		version.json = version.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FC9A0D21-3049-40EF-B6F1-55DA2CB685F3}"
@@ -52,7 +52,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebUtils", "WebUtils", "{3C
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.Net.RestEase.Shared", "src\Invisionware.Net.RestEase.Shared\Invisionware.Net.RestEase.Shared.shproj", "{6A7BC2F0-4F87-46B4-9D1C-87D6E98BE1AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.RestEase", "src\Invisionware.Net.RestEase\Invisionware.Net.RestEase.csproj", "{BE0922F0-C468-4311-8FA3-824F5C5EE14B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.RestEase", "src\Invisionware.Net.RestEase\Invisionware.Net.RestEase.csproj", "{BE0922F0-C468-4311-8FA3-824F5C5EE14B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.RestEase.Net46", "src\Invisionware.Net.RestEase.Net46\Invisionware.Net.RestEase.Net46.csproj", "{19F411BF-F0F3-4B4A-B1AA-951CDC0C116F}"
 EndProject

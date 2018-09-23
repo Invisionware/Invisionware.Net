@@ -81,12 +81,12 @@ namespace Invisionware.Net.WebUtils
 			get
 			{
 				var path = base.Path;
-				return path.Substring(path.LastIndexOf("/") + 1);
+				return path.Substring(path.LastIndexOf("/", StringComparison.Ordinal) + 1);
 			}
 			set
 			{
 				var path = base.Path;
-				path = path.Substring(0, path.LastIndexOf("/"));
+				path = path.Substring(0, path.LastIndexOf("/", StringComparison.Ordinal));
 				base.Path = string.Concat(path, "/", value);
 			}
 		}
@@ -209,13 +209,15 @@ namespace Invisionware.Net.WebUtils
 		#endregion
 
 		#region Public methods
-		/// <summary>
-		/// Returns a <see cref="System.String" /> that represents this instance.
-		/// </summary>
-		/// <param name="urlEncodeParams">if set to <c>true</c> [URL encode parameters].</param>
-		/// <param name="includeEmptyValues">if set to <c>true</c> [include empty values].</param>
-		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
+#pragma warning disable RECS0137 // Method with optional parameter is hidden by overload
+								/// <summary>
+								/// Returns a <see cref="System.String" /> that represents this instance.
+								/// </summary>
+								/// <param name="urlEncodeParams">if set to <c>true</c> [URL encode parameters].</param>
+								/// <param name="includeEmptyValues">if set to <c>true</c> [include empty values].</param>
+								/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public string ToString(bool urlEncodeParams = false, bool includeEmptyValues = true)
+#pragma warning restore RECS0137 // Method with optional parameter is hidden by overload
 		{
 			GetQueryString(urlEncodeParams, includeEmptyValues);
 

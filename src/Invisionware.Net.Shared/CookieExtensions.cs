@@ -112,7 +112,7 @@ namespace Invisionware.Net
 						var strCNameAndCValue = strEachCookParts[j];
 						if (strCNameAndCValue != string.Empty)
 						{
-							var firstEqual = strCNameAndCValue.IndexOf("=");
+							var firstEqual = strCNameAndCValue.IndexOf("=", StringComparison.Ordinal);
 							var firstName = strCNameAndCValue.Substring(0, firstEqual);
 							var allValue = strCNameAndCValue.Substring(firstEqual + 1, strCNameAndCValue.Length - (firstEqual + 1));
 							cookTemp.Name = firstName;

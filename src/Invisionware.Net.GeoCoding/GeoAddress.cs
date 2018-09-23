@@ -12,7 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
-using XLabs.Ioc;
+using Invisionware.IoC;
 
 namespace Invisionware.Net.GeoCoding
 {

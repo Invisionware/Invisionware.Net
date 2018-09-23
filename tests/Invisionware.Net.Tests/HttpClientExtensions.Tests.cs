@@ -26,7 +26,7 @@ namespace Invisionware.Net.Tests
             resultTask.Wait();
 
             Assert.NotNull(resultTask.Result);
-            Assert.IsTrue(resultTask.Result.StartsWith("iVBORw0KGgoAAAANSUhEUgAAASwAAAEsBAMAAACLU5NGAAAAG1BMVEUAmf"));
+            Assert.IsTrue(resultTask.Result.StartsWith("iVBORw0KGgoAAAANSUhEUgAAASwAAAEsBAMAAACLU5NGAAAAG1BMVEUAmf", StringComparison.Ordinal));
         }
     }
 }

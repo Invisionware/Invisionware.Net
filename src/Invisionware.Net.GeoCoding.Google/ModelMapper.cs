@@ -13,7 +13,7 @@
 // ***********************************************************************
 using Invisionware.Net.GeoCoding.Google.Model;
 using System;
-using XLabs.Ioc;
+using Invisionware.IoC;
 
 namespace Invisionware.Net.GeoCoding.Google
 {

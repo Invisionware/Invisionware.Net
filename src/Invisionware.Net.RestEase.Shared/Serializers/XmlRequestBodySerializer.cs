@@ -9,7 +9,7 @@ namespace Invisionware.Net
     {
         public override HttpContent SerializeBody<T>(T body, RequestBodySerializerInfo info)
         {
-            if (body == null)
+            if (System.Collections.Generic.EqualityComparer<T>.Default.Equals(body, default(T)))
                 return null;
 
             // Consider caching generated XmlSerializers

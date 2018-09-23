@@ -13,7 +13,7 @@
 // ***********************************************************************
 
 using System.Collections.Generic;
-using XLabs.Ioc;
+using Invisionware.IoC;
 
 namespace Invisionware.Net.GeoCoding
 {

@@ -10,7 +10,7 @@ namespace Invisionware.Net
 
 		public override HttpContent SerializeBody<T>(T body, RequestBodySerializerInfo info)
         {
-            if (body == null)
+            if (System.Collections.Generic.EqualityComparer<T>.Default.Equals(body, default(T)))
                 return null;
 
             var content = new StringContent(JsonSerializerSettings != null ? JsonConvert.SerializeObject(body, JsonSerializerSettings) : JsonConvert.SerializeObject(body));

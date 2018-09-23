@@ -1,5 +1,5 @@
-﻿using Invisionware.Serialization;
-using System.Linq;
+﻿using System.Linq;
+using Invisionware.Serialization.JsonNET;
 
 namespace Invisionware.Net.WebUtils.Extensions
 {

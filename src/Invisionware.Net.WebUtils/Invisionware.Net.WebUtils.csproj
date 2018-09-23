@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Invisionware.Net.WebUtils</AssemblyName>
     <PackageId>Invisionware.Net.WebUtils</PackageId>
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
@@ -13,8 +13,13 @@
   <Import Project="..\Invisionware.Net.WebUtils.Shared\Invisionware.Net.WebUtils.Shared.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="Invisionware.Serialization" Version="1.1.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Invisionware.Serialization" Version="1.1.17" />
+    <PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.17" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="NETStandard.Library" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
