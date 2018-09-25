@@ -7,7 +7,7 @@
   <Import Project="..\Invisionware.Net.RestEase.Shared\Invisionware.Net.RestEase.Shared.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="Invisionware.Serialization" Version="1.1.17" />
+    <PackageReference Include="Invisionware.Serialization" Version="1.1.16" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="RestEase" Version="1.4.7" />
     <PackageReference Include="Serilog" Version="2.7.1" />

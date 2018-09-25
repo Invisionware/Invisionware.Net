@@ -72,8 +72,8 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 				if (geoAddressValidResult.Location != null)
 				{
 					addressFound.Location.Should().NotBeNull();	
-					addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude, 1.0);
-					addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude, 1.0);
+					addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude.Value, 1.0);
+					addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude.Value, 1.0);
 				}
 
 				if (geoAddressValidResult.Source != null)
@@ -112,8 +112,8 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 				addressFound.Region.Should().BeEquivalentTo(geoAddressValidResult.Region);
 				addressFound.Country.Should().BeEquivalentTo(geoAddressValidResult.Country);
 				addressFound.Location.Should().NotBeNull();
-				addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude, 1.0);
-				addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude, 1.0);
+				addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude.Value, 1.0);
+				addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude.Value, 1.0);
 			}
 			else
 			{
@@ -145,8 +145,8 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 				addressFound.Region.Should().BeEquivalentTo(geoAddressValidResult.Region);
 				addressFound.Country.Should().BeEquivalentTo(geoAddressValidResult.Country);
 				addressFound.Location.Should().NotBeNull();
-				addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude, 1.0);
-				addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude, 1.0);
+				addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude.Value, 1.0);
+				addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude.Value, 1.0);
 			}
 			else
 			{

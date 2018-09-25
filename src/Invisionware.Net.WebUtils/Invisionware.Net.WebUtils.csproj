@@ -13,8 +13,8 @@
   <Import Project="..\Invisionware.Net.WebUtils.Shared\Invisionware.Net.WebUtils.Shared.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="Invisionware.Serialization" Version="1.1.17" />
-    <PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.17" />
+    <PackageReference Include="Invisionware.Serialization" Version="1.1.16" />
+    <PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.16" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
