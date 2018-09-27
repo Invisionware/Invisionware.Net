@@ -6,9 +6,9 @@
 		<title>Invisionware.Net</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
-		<projectUrl>https://github.com/Invisionware/Net</projectUrl>
-		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Net/master/LICENSE</licenseUrl>
-		<iconUrl>https://github.com/Invisionware/Net/raw/master/logo.png</iconUrl>
+		<projectUrl>https://github.com/Invisionware/Invisionware.Net</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Invisionware.Net/master/LICENSE</licenseUrl>
+		<iconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Contains various extension methods and supporting classes for System.Net (Cookies, UrlBuilder, HtmlDecode, etc)</description>
 		<summary>Contains various extension methods and supporting classes for System.Net (Cookies, UrlBuilder, HtmlDecode, etc)</summary>
@@ -23,6 +23,7 @@
 				<dependency id="System.Net.Primitives" version="4.3.0" />
 				<dependency id="Serilog" version="2.5.0" />
 
+				<dependency id="Invisionware.Core" version="1.0.0" />
 				<dependency id="Invisionware.Serialization" version="1.1.7" />
 			</group>
 		</dependencies>

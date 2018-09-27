@@ -6,12 +6,12 @@
 		<title>Invisionware.Net.RestEase</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
+		<projectUrl>https://github.com/Invisionware/Invisionware.Net</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Invisionware.Net/master/LICENSE</licenseUrl>
+		<iconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Contains various extensions and supporting utilities for RestEase</description>
 		<summary>Contains various extensions and supporting utilities for RestEase</summary>
-		<projectUrl>https://github.com/Invisionware/Net</projectUrl>
-		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Net/master/LICENSE</licenseUrl>
-		<iconUrl>https://github.com/Invisionware/Net/raw/master/logo.png</iconUrl>
 		<releaseNotes></releaseNotes>
 		<copyright>Copyright © 2018 Invisionware</copyright>
 		<language>en-US</language>

@@ -6,12 +6,12 @@
 		<title>Invisionware.Net.GeoCoding</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
+		<projectUrl>https://github.com/Invisionware/Invisionware.Net</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Invisionware.Net/master/LICENSE</licenseUrl>
+		<iconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</description>
 		<summary>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</summary>
-		<projectUrl>https://github.com/Invisionware/Net</projectUrl>
-		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Net/master/LICENSE</licenseUrl>
-		<iconUrl>https://github.com/Invisionware/Net/raw/master/logo.png</iconUrl>
 		<releaseNotes></releaseNotes>
 		<copyright>Copyright © 2018 Invisionware</copyright>
 		<language>en-US</language>
