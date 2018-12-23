@@ -75,10 +75,9 @@ namespace Invisionware.Net
 			var pageUri = response.RequestMessage.RequestUri;
 
 			var cookieContainer = new CookieContainer();
-			IEnumerable<string> cookies;
-			if (!response.Headers.TryGetValues("set-cookie", out cookies)) return cookieContainer;
+            if (!response.Headers.TryGetValues("set-cookie", out IEnumerable<string> cookies)) return cookieContainer;
 
-			foreach (var c in cookies)
+            foreach (var c in cookies)
 			{
 				cookieContainer.SetCookies(pageUri, c);
 			}

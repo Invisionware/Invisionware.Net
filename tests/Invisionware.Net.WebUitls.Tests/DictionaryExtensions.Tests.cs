@@ -7,7 +7,7 @@ namespace Invisionware.Net.WebUitls.Tests
 	[TestFixture]
 	public class DictionaryExtensionsTests
 	{
-		private IDictionary<string, string> _queryString = new Dictionary<string, string>
+		private readonly IDictionary<string, string> _queryString = new Dictionary<string, string>
 		{
 			{"param1", "value1"},
 			{"param2", "1"},

@@ -30,8 +30,7 @@ namespace Invisionware.Net.Http
         /// <exception cref="ArgumentNullException"><paramref name="getToken" /> is <see langword="null" />.</exception>
         public AuthenticatedHttpClientHandler(Func<Task<string>> getToken)
         {
-            if (getToken == null) throw new ArgumentNullException(nameof(getToken));
-            _getToken = getToken;
+            _getToken = getToken ?? throw new ArgumentNullException(nameof(getToken));
         }
 
         /// <summary>

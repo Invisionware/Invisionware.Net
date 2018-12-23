@@ -135,8 +135,7 @@ namespace Invisionware.Net.Http
         /// <returns><c>true</c> if [is text based content type] [the specified headers]; otherwise, <c>false</c>.</returns>
         bool IsTextBasedContentType(HttpHeaders headers)
         {
-            IEnumerable<string> values;
-            if (!headers.TryGetValues("Content-Type", out values))
+            if (!headers.TryGetValues("Content-Type", out IEnumerable<string> values))
                 return false;
             var header = string.Join(" ", values).ToLowerInvariant();
 

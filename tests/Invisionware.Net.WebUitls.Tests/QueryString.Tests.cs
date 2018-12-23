@@ -13,26 +13,26 @@ namespace Invisionware.Net.WebUitls.Tests
 	[TestFixture]
 	public class QueryStringSerializationTests
 	{
-		private QueryStringParamOptions _serializationOptionsAttributeFilter1 =
+		private readonly QueryStringParamOptions _serializationOptionsAttributeFilter1 =
 			new QueryStringParamOptions
 			{
 					IgnorePropertiesWithoutAttribute = true
 				};
 
-		private QueryStringParamOptions _serializationOptionsAttributeFilter2 =
+		private readonly QueryStringParamOptions _serializationOptionsAttributeFilter2 =
 			new QueryStringParamOptions
 			{
 				PropertyFilter = (p) => p.Name != "ParamList1" && p.GetCustomAttribute<JsonPropertyAttribute>()?.PropertyName != "ParamList1"
 			};
 
-		private QueryStringParamOptions _serializationOptionsUrlDisableEncode1 =
+		private readonly QueryStringParamOptions _serializationOptionsUrlDisableEncode1 =
 			new QueryStringParamOptions
 			{
 				UrlEncodeKeyName = false,
 				UrlEncodeValue = false
 			};
 
-		private QueryStringParamOptions _serializationOptionsUrlQueryParamFunc1 =
+		private readonly QueryStringParamOptions _serializationOptionsUrlQueryParamFunc1 =
 			new QueryStringParamOptions
 			{
 				QueryParamJoinFunc = (paramName, formmattedParam) =>

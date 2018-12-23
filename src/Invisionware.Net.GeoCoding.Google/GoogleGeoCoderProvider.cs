@@ -44,12 +44,9 @@ namespace Invisionware.Net.GeoCoding.Google
 		/// <exception cref="System.Exception">APIKey must be defined</exception>
 		public void Initialize(Action<IGeoCoderProvider> initFunc = null)
 		{
-			if (initFunc != null)
-			{
-				initFunc(this);
-			}
+            initFunc?.Invoke(this);
 
-			if (string.IsNullOrEmpty(APIKey))
+            if (string.IsNullOrEmpty(APIKey))
 			{
 				throw new Exception("APIKey must be defined");
 			}

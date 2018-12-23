@@ -36,15 +36,15 @@ namespace Invisionware.Net.GeoCoding.Google
 		/// <summary>
 		/// The search source URL
 		/// </summary>
-		private string SearchSourceUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json";
+		private readonly string SearchSourceUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json";
 		/// <summary>
 		/// The details source URL
 		/// </summary>
-		private string DetailsSourceUrl = "https://maps.googleapis.com/maps/api/place/details/json";
+		private readonly string DetailsSourceUrl = "https://maps.googleapis.com/maps/api/place/details/json";
 		/// <summary>
 		/// The geo code source URL
 		/// </summary>
-		private string GeoCodeSourceUrl = "https://maps.googleapis.com/maps/api/geocode/json";
+		private readonly string GeoCodeSourceUrl = "https://maps.googleapis.com/maps/api/geocode/json";
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GooglePlacesWrapper"/> class.

@@ -24,7 +24,7 @@
 				<dependency id="Serilog" version="2.5.0" />
 
 				<dependency id="Invisionware.Core" version="1.0.0" />
-				<dependency id="Invisionware.Serialization" version="1.1.7" />
+				<dependency id="Invisionware.Serialization" version="1.1.17" />
 			</group>
 		</dependencies>
 	</metadata>

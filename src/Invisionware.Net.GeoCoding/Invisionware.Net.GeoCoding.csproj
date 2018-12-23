@@ -9,7 +9,7 @@
 		<GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
 		<Authors>Invisionware</Authors>
 		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.Net</PackageProjectUrl>
-		<PackageLicenseUrl>https://raw.githubusercontent.com/Invisionware/Invisionware.Net/master/LICENSE</PackageLicenseUrl>
+		<license>Apache-2.0</license>
 		<PackageIconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</PackageIconUrl>
 		<Description>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</Description>
 		<PackageReleaseNotes></PackageReleaseNotes>
@@ -19,7 +19,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Invisionware.IoC" Version="1.0.1" />
-		<PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Invisionware.Net.GeoCoding.Interfaces\Invisionware.Net.GeoCoding.Interfaces.csproj" />

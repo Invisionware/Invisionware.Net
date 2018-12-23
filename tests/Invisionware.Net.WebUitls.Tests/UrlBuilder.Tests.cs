@@ -6,10 +6,10 @@ namespace Invisionware.Net.WebUitls.Tests
 	[TestFixture]
 	public class UrlBuilderTests
 	{
-		private string _url1 = "http://someplace.com";
-		private string _url2 = "http://someplace.com/path/";
-		private string _url3 = "http://someplace.com/path/page.cool";
-		private string _url4 = "http://someplace.com/path/page.cool?param1=value1&param2=3&param3=1 > some&param4";
+		private readonly string _url1 = "http://someplace.com";
+		private readonly string _url2 = "http://someplace.com/path/";
+		private readonly string _url3 = "http://someplace.com/path/page.cool";
+		private readonly string _url4 = "http://someplace.com/path/page.cool?param1=value1&param2=3&param3=1 > some&param4";
 
 		[SetUp]
 		public void Initialize()
