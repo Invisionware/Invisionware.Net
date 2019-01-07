@@ -1,29 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Invisionware.Net.GeoCoding.Google</AssemblyName>
-    <PackageId>Invisionware.Net.GeoCoding.Google</PackageId>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp1.0;netstandard2.0;net472</TargetFrameworks>
+		<PackageId>Invisionware.Net.GeoCoding.Google</PackageId>
+		<Authors>Invisionware</Authors>
+		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.Net</PackageProjectUrl>
+		<license>Apache-2.0</license>
+		<PackageIconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</PackageIconUrl>
+		<Description>Contains geocoding implementation for google</Description>
+		<PackageReleaseNotes />
+		<Copyright>Copyright © 2018 Invisionware</Copyright>
+		<PackageTags>invisionware geocoding address geo google</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Invisionware.IoC" Version="1.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="Serilog" Version="2.7.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre01" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+		<PackageReference Include="Serilog" Version="2.7.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Invisionware.Net.GeoCoding.Interfaces\Invisionware.Net.GeoCoding.Interfaces.csproj" />
-    <ProjectReference Include="..\Invisionware.Net.GeoCoding\Invisionware.Net.GeoCoding.csproj" />
-    <ProjectReference Include="..\Invisionware.Net.WebUtils\Invisionware.Net.WebUtils.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="NETStandard.Library" Version="2.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Invisionware.Net.GeoCoding.Interfaces\Invisionware.Net.GeoCoding.Interfaces.csproj" />
+		<ProjectReference Include="..\Invisionware.Net.GeoCoding\Invisionware.Net.GeoCoding.csproj" />
+		<ProjectReference Include="..\Invisionware.Net.WebUtils\Invisionware.Net.WebUtils.csproj" />
+	</ItemGroup>
 
 </Project>

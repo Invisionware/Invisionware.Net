@@ -9,8 +9,8 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="FluentAssertions" Version="5.5.3" />
-    <PackageReference Include="Invisionware.IoC" Version="1.0.1" />
-    <PackageReference Include="Invisionware.IoC.Autofac" Version="1.0.1" />
+    <PackageReference Include="Invisionware.IoC" Version="1.0.2-pre01" />
+    <PackageReference Include="Invisionware.IoC.Autofac" Version="1.0.2-pre01" />
     <PackageReference Include="nunit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.12.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />

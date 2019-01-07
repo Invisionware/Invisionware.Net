@@ -1,15 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{030783D5-8B49-446B-B4BD-623CE9C87C7E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuspec", ".nuspec", "{A31F0DBA-7B31-40C8-9887-2E51BD76D565}"
-	ProjectSection(SolutionItems) = preProject
-		nuspec\Invisionware.Net.GeoCoding.nuspec = nuspec\Invisionware.Net.GeoCoding.nuspec
-		nuspec\Invisionware.Net.nuspec = nuspec\Invisionware.Net.nuspec
-		nuspec\Invisionware.Net.RestEase.nuspec = nuspec\Invisionware.Net.RestEase.nuspec
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".misc", ".misc", "{B67DBE97-2A64-4E27-8878-698FC381DABD}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,9 +24,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.GeoCoding.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.WebUtils", "src\Invisionware.Net.WebUtils\Invisionware.Net.WebUtils.csproj", "{C944CD78-EC8C-4A93-B63D-5A3E1C27089D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.WebUitls.Tests", "tests\Invisionware.Net.WebUitls.Tests\Invisionware.Net.WebUitls.Tests.csproj", "{B33CFE0A-B2B3-46C6-AE31-464BDE21B8A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.WebUitls.Tests", "tests\Invisionware.Net.WebUitls.Tests\Invisionware.Net.WebUitls.Tests.csproj", "{B33CFE0A-B2B3-46C6-AE31-464BDE21B8A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.GeoCoding.Google.Tests", "tests\Invisionware.Net.GeoCoding.Google.Tests\Invisionware.Net.GeoCoding.Google.Tests.csproj", "{3ADF37AB-5A97-45FA-9C36-F4B7B1AED668}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.GeoCoding.Google.Tests", "tests\Invisionware.Net.GeoCoding.Google.Tests\Invisionware.Net.GeoCoding.Google.Tests.csproj", "{3ADF37AB-5A97-45FA-9C36-F4B7B1AED668}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{170B64E1-5A0B-4469-A44D-BEEB9E88889D}"
 	ProjectSection(SolutionItems) = preProject
@@ -42,30 +35,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{170B64
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net", "src\Invisionware.Net\Invisionware.Net.csproj", "{76C08B37-980B-43EA-A0FF-DD56EC196CC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.Tests", "tests\Invisionware.Net.Tests\Invisionware.Net.Tests.csproj", "{8CFDB383-7349-495B-ADBD-272F80BCE0DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.Tests", "tests\Invisionware.Net.Tests\Invisionware.Net.Tests.csproj", "{8CFDB383-7349-495B-ADBD-272F80BCE0DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Net.RestEase.Tests", "tests\Invisionware.Net.RestEase.Tests\Invisionware.Net.RestEase.Tests.csproj", "{A8B4E04F-75C7-4210-87E5-FF3FE4E71949}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.RestEase.Tests", "tests\Invisionware.Net.RestEase.Tests\Invisionware.Net.RestEase.Tests.csproj", "{A8B4E04F-75C7-4210-87E5-FF3FE4E71949}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestEase", "RestEase", "{E746D090-A0B5-47FF-81DA-6E5BE3A28B4E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebUtils", "WebUtils", "{3C923F3D-A5E7-41ED-8022-35E629B70112}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.Net.RestEase.Shared", "src\Invisionware.Net.RestEase.Shared\Invisionware.Net.RestEase.Shared.shproj", "{6A7BC2F0-4F87-46B4-9D1C-87D6E98BE1AE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Net.RestEase", "src\Invisionware.Net.RestEase\Invisionware.Net.RestEase.csproj", "{BE0922F0-C468-4311-8FA3-824F5C5EE14B}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.Net.WebUtils.Shared", "src\Invisionware.Net.WebUtils.Shared\Invisionware.Net.WebUtils.Shared.shproj", "{5334DEBC-D11E-4B35-B0D2-5F597A4ABB6C}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.Net.Shared", "src\Invisionware.Net.Shared\Invisionware.Net.Shared.shproj", "{441EAA6A-41E4-405A-856D-A8D521D7A3B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{BA0DFE0E-2CBC-4DB4-AFEE-2A0D83146610}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\Invisionware.Net.Shared\Invisionware.Net.Shared.projitems*{441eaa6a-41e4-405a-856d-a8d521d7a3b8}*SharedItemsImports = 13
-		src\Invisionware.Net.WebUtils.Shared\Invisionware.Net.WebUtils.Shared.projitems*{5334debc-d11e-4b35-b0d2-5f597a4abb6c}*SharedItemsImports = 13
-		src\Invisionware.Net.RestEase.Shared\Invisionware.Net.RestEase.Shared.projitems*{6a7bc2f0-4f87-46b4-9d1c-87d6e98be1ae}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -254,10 +236,7 @@ Global
 		{A8B4E04F-75C7-4210-87E5-FF3FE4E71949} = {FC9A0D21-3049-40EF-B6F1-55DA2CB685F3}
 		{E746D090-A0B5-47FF-81DA-6E5BE3A28B4E} = {030783D5-8B49-446B-B4BD-623CE9C87C7E}
 		{3C923F3D-A5E7-41ED-8022-35E629B70112} = {030783D5-8B49-446B-B4BD-623CE9C87C7E}
-		{6A7BC2F0-4F87-46B4-9D1C-87D6E98BE1AE} = {E746D090-A0B5-47FF-81DA-6E5BE3A28B4E}
 		{BE0922F0-C468-4311-8FA3-824F5C5EE14B} = {E746D090-A0B5-47FF-81DA-6E5BE3A28B4E}
-		{5334DEBC-D11E-4B35-B0D2-5F597A4ABB6C} = {3C923F3D-A5E7-41ED-8022-35E629B70112}
-		{441EAA6A-41E4-405A-856D-A8D521D7A3B8} = {BA0DFE0E-2CBC-4DB4-AFEE-2A0D83146610}
 		{BA0DFE0E-2CBC-4DB4-AFEE-2A0D83146610} = {030783D5-8B49-446B-B4BD-623CE9C87C7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

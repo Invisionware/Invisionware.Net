@@ -1,25 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Invisionware.Net.WebUtils</AssemblyName>
-    <PackageId>Invisionware.Net.WebUtils</PackageId>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp1.0;netstandard2.0;net472</TargetFrameworks>
+		<PackageId>Invisionware.Net.WebUtils</PackageId>
+		<Authors>Invisionware</Authors>
+		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.Net</PackageProjectUrl>
+		<license>Apache-2.0</license>
+		<PackageIconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</PackageIconUrl>
+		<Description>Contains various extensions and supporting utilities for Web and Network code</Description>
+		<PackageReleaseNotes />
+		<Copyright>Copyright © 2018 Invisionware</Copyright>
+		<PackageTags>serialize invisionware url querystring</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>		
+	</PropertyGroup>
 
-  <Import Project="..\Invisionware.Net.WebUtils.Shared\Invisionware.Net.WebUtils.Shared.projitems" Label="Shared" />
+	<ItemGroup>
+		<PackageReference Include="Invisionware.Serialization" Version="1.1.19-pre01" />
+		<PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.19-pre01" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Invisionware.Serialization" Version="1.1.18" />
-    <PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.18" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="NETStandard.Library" Version="2.0.0" />
-  </ItemGroup>
-
+	<!-- Conditionally obtain references for the .NET Framework 4.5 target -->
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+		<PackageReference Include="System.Net.Http" Version="4.3.4" />
+	</ItemGroup>
+	
 </Project>

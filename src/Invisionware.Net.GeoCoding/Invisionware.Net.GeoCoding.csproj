@@ -1,30 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyName>Invisionware.Net.GeoCoding</AssemblyName>
+		<TargetFrameworks>netcoreapp1.0;netstandard2.0;net472</TargetFrameworks>
 		<PackageId>Invisionware.Net.GeoCoding</PackageId>
-		<NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-		<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-		<GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
 		<Authors>Invisionware</Authors>
 		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.Net</PackageProjectUrl>
 		<license>Apache-2.0</license>
 		<PackageIconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</PackageIconUrl>
 		<Description>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</Description>
-		<PackageReleaseNotes></PackageReleaseNotes>
+		<PackageReleaseNotes />
 		<Copyright>Copyright © 2018 Invisionware</Copyright>
 		<PackageTags>invisionware geocoding address geo</PackageTags>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>		
 	</PropertyGroup>
+	
 	<ItemGroup>
-		<PackageReference Include="Invisionware.IoC" Version="1.0.1" />
+		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre01" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
 	</ItemGroup>
+	
 	<ItemGroup>
 		<ProjectReference Include="..\Invisionware.Net.GeoCoding.Interfaces\Invisionware.Net.GeoCoding.Interfaces.csproj" />
 	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Update="NETStandard.Library" Version="2.0.0" />
-	</ItemGroup>
+	
 </Project>
