@@ -31,8 +31,108 @@ namespace Invisionware.Net
 		private IDictionary<string,string> _queryString = null;
 		#endregion Private Variables
 
-		#region Constructors
-		#endregion Constructors
+		#region Constructor overloads
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="UrlBuilder" /> class.
+		/// </summary>
+		public UrlBuilder()
+			: base()
+		{
+			UrlEncodeParameters = false;
+			IncludeEmptyParameters = false;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified URI.
+		/// </summary>
+		/// <param name="uri">A URI string.</param>
+		public UrlBuilder(string uri)
+			: base(uri)
+		{
+			UrlEncodeParameters = false;
+			IncludeEmptyParameters = false;
+
+			PopulateQueryString();
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified <see cref="T:System.Uri" /> instance.
+		/// </summary>
+		/// <param name="uri">An instance of the <see cref="T:System.Uri" /> class.</param>
+		public UrlBuilder(Uri uri)
+			: base(uri)
+		{
+			UrlEncodeParameters = false;
+			IncludeEmptyParameters = false;
+
+			PopulateQueryString();
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="UrlBuilder"/> class.
+		/// </summary>
+		/// <param name="ub">The ub.</param>
+		public UrlBuilder(UrlBuilder ub) : this(ub.Uri)
+		{
+
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified scheme and host.
+		/// </summary>
+		/// <param name="schemeName">An Internet access protocol.</param>
+		/// <param name="hostName">A DNS-style domain name or IP address.</param>
+		public UrlBuilder(string schemeName, string hostName)
+			: base(schemeName, hostName)
+		{
+			UrlEncodeParameters = false;
+			IncludeEmptyParameters = false;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified scheme, host, and port.
+		/// </summary>
+		/// <param name="scheme">An Internet access protocol.</param>
+		/// <param name="host">A DNS-style domain name or IP address.</param>
+		/// <param name="portNumber">An IP port number for the service.</param>
+		public UrlBuilder(string scheme, string host, int portNumber)
+			: base(scheme, host, portNumber)
+		{
+			UrlEncodeParameters = false;
+			IncludeEmptyParameters = false;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified scheme, host, port number, and path.
+		/// </summary>
+		/// <param name="scheme">An Internet access protocol.</param>
+		/// <param name="host">A DNS-style domain name or IP address.</param>
+		/// <param name="port">An IP port number for the service.</param>
+		/// <param name="pathValue">The path to the Internet resource.</param>
+		public UrlBuilder(string scheme, string host, int port, string pathValue)
+			: base(scheme, host, port, pathValue)
+		{
+			UrlEncodeParameters = false;
+			IncludeEmptyParameters = false;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified scheme, host, port number, path and query string or fragment identifier.
+		/// </summary>
+		/// <param name="scheme">An Internet access protocol.</param>
+		/// <param name="host">A DNS-style domain name or IP address.</param>
+		/// <param name="port">An IP port number for the service.</param>
+		/// <param name="path">The path to the Internet resource.</param>
+		/// <param name="extraValue">A query string or fragment identifier.</param>
+		public UrlBuilder(string scheme, string host, int port, string path, string extraValue)
+			: base(scheme, host, port, path, extraValue)
+		{
+			UrlEncodeParameters = false;
+			IncludeEmptyParameters = false;
+		}
+		#endregion
+
 
 		#region Properties
 		/// <summary>
@@ -107,108 +207,6 @@ namespace Invisionware.Net
 		}
 		#endregion
 
-		#region Constructor overloads
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UrlBuilder" /> class.
-		/// </summary>
-		public UrlBuilder()
-			: base()
-		{
-			UrlEncodeParameters = false;
-			IncludeEmptyParameters = false;
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified URI.
-		/// </summary>
-		/// <param name="uri">A URI string.</param>
-		public UrlBuilder(string uri)
-			: base(uri)
-		{
-			UrlEncodeParameters = false;
-			IncludeEmptyParameters = false;
-
-			PopulateQueryString();
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified <see cref="T:System.Uri" /> instance.
-		/// </summary>
-		/// <param name="uri">An instance of the <see cref="T:System.Uri" /> class.</param>
-		public UrlBuilder(Uri uri)
-			: base(uri)
-		{
-			UrlEncodeParameters = false;
-			IncludeEmptyParameters = false;
-
-			PopulateQueryString();
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UrlBuilder"/> class.
-		/// </summary>
-		/// <param name="ub">The ub.</param>
-		public UrlBuilder(UrlBuilder ub) : this(ub.Uri)
-		{
-			
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified scheme and host.
-		/// </summary>
-		/// <param name="schemeName">An Internet access protocol.</param>
-		/// <param name="hostName">A DNS-style domain name or IP address.</param>
-		public UrlBuilder(string schemeName, string hostName)
-			: base(schemeName, hostName)
-		{
-			UrlEncodeParameters = false;
-			IncludeEmptyParameters = false;
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified scheme, host, and port.
-		/// </summary>
-		/// <param name="scheme">An Internet access protocol.</param>
-		/// <param name="host">A DNS-style domain name or IP address.</param>
-		/// <param name="portNumber">An IP port number for the service.</param>
-		public UrlBuilder(string scheme, string host, int portNumber)
-			: base(scheme, host, portNumber)
-		{
-			UrlEncodeParameters = false;
-			IncludeEmptyParameters = false;
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified scheme, host, port number, and path.
-		/// </summary>
-		/// <param name="scheme">An Internet access protocol.</param>
-		/// <param name="host">A DNS-style domain name or IP address.</param>
-		/// <param name="port">An IP port number for the service.</param>
-		/// <param name="pathValue">The path to the Internet resource.</param>
-		public UrlBuilder(string scheme, string host, int port, string pathValue)
-			: base(scheme, host, port, pathValue)
-		{
-			UrlEncodeParameters = false;
-			IncludeEmptyParameters = false;
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:System.UriBuilder" /> class with the specified scheme, host, port number, path and query string or fragment identifier.
-		/// </summary>
-		/// <param name="scheme">An Internet access protocol.</param>
-		/// <param name="host">A DNS-style domain name or IP address.</param>
-		/// <param name="port">An IP port number for the service.</param>
-		/// <param name="path">The path to the Internet resource.</param>
-		/// <param name="extraValue">A query string or fragment identifier.</param>
-		public UrlBuilder(string scheme, string host, int port, string path, string extraValue)
-			: base(scheme, host, port, path, extraValue)
-		{
-			UrlEncodeParameters = false;
-			IncludeEmptyParameters = false;
-		}
-		#endregion
-
 		#region Public methods
 #pragma warning disable RECS0137 // Method with optional parameter is hidden by overload
 								/// <summary>
@@ -242,6 +240,31 @@ namespace Invisionware.Net
 		public new string ToString()
 		{
 			return ToString(UrlEncodeParameters, IncludeEmptyParameters);
+		}
+
+		/// <summary>
+		/// Returns the QueryString as a Strongly Typed Object
+		/// </summary>
+		/// <typeparam name="T">The object type to serialize the query string to</typeparam>
+		/// <param name="jsonSerializer">Option json serializer object (useful to when using custom configurations)</param>
+		/// <returns>A valid instance of T</returns>
+		public T QueryStringAsObject<T>(Newtonsoft.Json.JsonSerializer jsonSerializer = null)
+		{
+			Newtonsoft.Json.Linq.JObject jObject;
+
+			if (jsonSerializer != null)
+			{
+				jObject = Newtonsoft.Json.Linq.JObject.FromObject(this.QueryString, jsonSerializer);
+			}
+			else
+			{
+				jObject = Newtonsoft.Json.Linq.JObject.FromObject(this.QueryString);
+			}
+
+			var result = jObject.ToObject<T>();
+
+			return result;
+
 		}
 		#endregion
 

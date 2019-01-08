@@ -26,15 +26,5 @@ namespace Invisionware.Net.WebUtils.Extensions
 				.Select(x => options.QueryParamJoinFunc(x.Key, x.Value != null ? string.Concat(x.Key, options.NameValueSepartor, x.Value) : x.Key)));
 
 		}
-
-		public static T FromQueryString<T>(System.Net.HttpWebRequest request, Newtonsoft.Json.JsonSerializer jsonSerializer = null)
-		{
-			var dict = new UrlBuilder(request.RequestUri).QueryString;
-
-			var jObject = Newtonsoft.Json.Linq.JObject.FromObject(dict, jsonSerializer);
-			var result = jObject.ToObject<T>();
-
-			return result;
-		}
 	}
 }
