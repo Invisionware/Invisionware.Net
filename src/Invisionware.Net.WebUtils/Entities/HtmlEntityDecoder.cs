@@ -97,16 +97,16 @@ namespace Invisionware.Net.WebUtils.Entities
 		/// <param name="writer">The writer.</param>
 		private void WriteTextEntity(Token token, TextWriter writer)
 		{
-            if (_entityToCharMap.TryGetValue(token.Text, out char c))
-            {   // We recognize the entity
-                writer.Write(c);
-            }
-            else
-            {
-                // Do not recognize, treat it as content
-                WriteAsContext(token, writer);
-            }
-        }
+			if (_entityToCharMap.TryGetValue(token.Text, out char c))
+			{   // We recognize the entity
+				writer.Write(c);
+			}
+			else
+			{
+				// Do not recognize, treat it as content
+				WriteAsContext(token, writer);
+			}
+		}
 
 		/// <summary>
 		/// Writes the decimal entity.
@@ -136,15 +136,15 @@ namespace Invisionware.Net.WebUtils.Entities
 		/// <param name="styles">The styles.</param>
 		private void WriteNumericEntity(Token token, TextWriter writer, NumberStyles styles)
 		{
-            if (ushort.TryParse(token.Text, styles, CultureInfo.InvariantCulture, out ushort value))
-            {
-                writer.Write((char)value);
-            }
-            else
-            {   // Failed to parse, write it as content
-                WriteAsContext(token, writer);
-            }
-        }
+			if (ushort.TryParse(token.Text, styles, CultureInfo.InvariantCulture, out ushort value))
+			{
+				writer.Write((char)value);
+			}
+			else
+			{   // Failed to parse, write it as content
+				WriteAsContext(token, writer);
+			}
+		}
 
 		/// <summary>
 		/// Writes as context.

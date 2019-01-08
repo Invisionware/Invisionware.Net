@@ -20,11 +20,21 @@ namespace Invisionware.Net.WebUtils.Extensions
 			if (options == null) options = new QueryStringParamOptions();
 
 			var properties = obj.SerializeToDictionary(options);
+			//var properties = Newtonsoft.Json.Linq.JObject.FromObject(obj, options.JsonSerializer).ToObject<System.Collections.Generic.Dictionary<string, object>>();
 
 			return string.Join("&", properties
 				.Select(x => options.QueryParamJoinFunc(x.Key, x.Value != null ? string.Concat(x.Key, options.NameValueSepartor, x.Value) : x.Key)));
 
 		}
 
+		public static T FromQueryString<T>(System.Net.HttpWebRequest request, Newtonsoft.Json.JsonSerializer jsonSerializer = null)
+		{
+			var dict = new UrlBuilder(request.RequestUri).QueryString;
+
+			var jObject = Newtonsoft.Json.Linq.JObject.FromObject(dict, jsonSerializer);
+			var result = jObject.ToObject<T>();
+
+			return result;
+		}
 	}
 }

@@ -42,15 +42,15 @@ namespace Invisionware.Net.WebUtils.Entities
 
 			foreach (char c in html)
 			{
-                if (_charToEntityMap.TryGetValue(c, out HtmlEntity entity))
-                {
-                    WriteEntity(c, entity, writer);
-                }
-                else
-                {
-                    WriteChar(c, writer);
-                }
-            }
+				if (_charToEntityMap.TryGetValue(c, out HtmlEntity entity))
+				{
+					WriteEntity(c, entity, writer);
+				}
+				else
+				{
+					WriteChar(c, writer);
+				}
+			}
 		}
 
 		/// <summary>

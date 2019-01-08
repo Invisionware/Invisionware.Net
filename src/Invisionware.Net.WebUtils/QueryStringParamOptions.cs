@@ -24,5 +24,7 @@ namespace Invisionware.Net.WebUtils
 		/// </example>
 		public Func<string, string, string> QueryParamJoinFunc { get; set; } = (key, keyValue) => keyValue;
 
+		public Newtonsoft.Json.JsonSerializer JsonSerializer { get; set; }
+
 	}
 }

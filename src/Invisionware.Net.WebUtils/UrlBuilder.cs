@@ -14,9 +14,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 using Invisionware.Collections;
 
-namespace Invisionware.Net.WebUtils
+namespace Invisionware.Net
 {
 	/// <summary>
 	/// Class UrlBuilder.

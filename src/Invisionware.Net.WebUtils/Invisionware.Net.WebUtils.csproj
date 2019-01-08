@@ -15,8 +15,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Invisionware.Serialization" Version="1.1.19-pre01" />
-		<PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.19-pre01" />
+		<PackageReference Include="Invisionware.Serialization" Version="1.1.19-pre04" />
+		<PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.19-pre04" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
 	</ItemGroup>
 

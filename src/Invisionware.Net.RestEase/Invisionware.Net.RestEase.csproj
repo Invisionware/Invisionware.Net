@@ -15,7 +15,7 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Invisionware.Serialization" Version="1.1.19-pre01" />
+		<PackageReference Include="Invisionware.Serialization" Version="1.1.19-pre04" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
 		<PackageReference Include="RestEase" Version="1.4.7" />
 		<PackageReference Include="Serilog" Version="2.7.1" />

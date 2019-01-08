@@ -33,17 +33,7 @@ namespace Invisionware.Collections
 		{
 			if (data == null || data.Count == 0) return string.Empty;
 
-			//var keys = new string[count];
-			//var values = new string[count];
 			var pairs = new List<string>();
-
-			//data.Keys.CopyTo(keys, 0);
-			//data.Values.CopyTo(values, 0);
-			
-			//for (var i = 0; i < count; i++)
-			//{
-			//	pairs[i] = string.Concat(keys[i], "=", urlEncodeParams ? WebUtility.UrlEncode(values[i]) : values[i]);
-			//}
 
 			foreach (var qp in data)
 			{
@@ -53,7 +43,7 @@ namespace Invisionware.Collections
 				}
 				else
 				{
-					pairs.Add(string.Concat(qp.Key, "=", urlEncodeParams ? System.Net.WebUtility.UrlEncode(qp.Value) : qp.Value));
+					pairs.Add(string.Concat(qp.Key, "=", urlEncodeParams ? Invisionware.Net.WebUtility.UrlEncode(qp.Value) : qp.Value)); // System.Net.WebUtility.UrlEncode(qp.Value) 
 				}
 			}
 

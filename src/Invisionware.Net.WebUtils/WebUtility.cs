@@ -17,7 +17,7 @@ using System.Globalization;
 using System.IO;
 using Invisionware.Net.WebUtils.Entities;
 
-namespace Invisionware.Net.WebUtils
+namespace Invisionware.Net
 {
 	/// <summary>
 	/// Provides methods for encoding and decoding HTML when processing Web requests.
@@ -102,8 +102,10 @@ namespace Invisionware.Net.WebUtils
 		// [Obsolete("Use System.Uri.EscapeDataString instead")]
 		public static string UrlEncode(string text)
 		{
+			return System.Net.WebUtility.UrlEncode(text);
+
 			// Sytem.Uri provides reliable parsing
-			return Uri.EscapeDataString(text);
+			//return Uri.EscapeDataString(text);
 		}
 
 		/// <summary>
