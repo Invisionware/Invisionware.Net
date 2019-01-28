@@ -13,24 +13,13 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 	{
 		private IGeoCoderProvider _provider;
 
-		static GoogleGeoCoderProviderTests()
-		{
-			var container = new Invisionware.IoC.Autofac.AutofacContainer(new Autofac.ContainerBuilder().Build());
-			Resolver.SetResolver(container.GetResolver());
-
-			container.Register<IDependencyContainer>(t => container);
-		}
-
 		[SetUp]
 		public Task InitializeAsync()
 		{
-
 			_provider = new GoogleGeoCoderProvider();
 
 			var container = Resolver.Resolve<IDependencyContainer>();
 			container.Register<IGeoCoderProvider>(t => _provider);
-
-			Invisionware.Net.GeoCoding.ModelMapper.Map();
 
 			_provider.Initialize(coderProvider =>
 			{
@@ -43,13 +32,13 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 		[Test]
 		[Category("Geo")]
 		[Category("Geo.Search.Google")]
-		[TestCaseSource(nameof(AddressSearchTestCaseItems))]
-		public async Task GeoSearchTest(string name, int distance, IGeoAddress geoAddress, IGeoAddress geoAddressValidResult, bool shouldBeValid)
+		[TestCaseSource(typeof(UnitTestData), nameof(UnitTestData.GeoAddresses))]
+		public async Task GeoSearchTest(IGeoAddress geoAddress, bool shouldBeValid)
 		{
 			var request = new GeoSearchRequest
 							{
-								Distance = distance,
-								Name = name,
+								Distance = 1000,
+								Name = geoAddress.Name,
 								Address = geoAddress
 								//AddressTypes = new List<AddressTypes> { AddressTypes.Stadium, AddressTypes.Establishment, AddressTypes.Store } <- not working right now
 							};
@@ -64,23 +53,23 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 
 				var addressFound = result.Items.First();
 
-				if (!string.IsNullOrEmpty(geoAddressValidResult.Line1)) addressFound.Line1.Should().BeEquivalentTo(geoAddressValidResult.Line1);
-				if (!string.IsNullOrEmpty(geoAddressValidResult.Line2)) addressFound.Line2.Should().BeEquivalentTo(geoAddressValidResult.Line2);
-				if (!string.IsNullOrEmpty(geoAddressValidResult.Region)) addressFound.Region.Should().BeEquivalentTo(geoAddressValidResult.Region);
-				if (!string.IsNullOrEmpty(geoAddressValidResult.Country)) addressFound.Country.Should().BeEquivalentTo(geoAddressValidResult.Country);
+				if (!string.IsNullOrEmpty(geoAddress.Line1)) addressFound.Line1.Should().BeEquivalentTo(geoAddress.Line1);
+				if (!string.IsNullOrEmpty(geoAddress.Line2)) addressFound.Line2.Should().BeEquivalentTo(geoAddress.Line2);
+				if (!string.IsNullOrEmpty(geoAddress.Region)) addressFound.Region.Should().BeEquivalentTo(geoAddress.Region);
+				if (!string.IsNullOrEmpty(geoAddress.Country)) addressFound.Country.Should().BeEquivalentTo(geoAddress.Country);
 
-				if (geoAddressValidResult.Location != null)
+				if (geoAddress.Location != null)
 				{
 					addressFound.Location.Should().NotBeNull();	
-					addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude.Value, 1.0);
-					addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude.Value, 1.0);
+					addressFound.Location.Latitude.Should().BeApproximately(geoAddress.Location.Latitude.Value, 1.0);
+					addressFound.Location.Longitude.Should().BeApproximately(geoAddress.Location.Longitude.Value, 1.0);
 				}
 
-				if (geoAddressValidResult.Source != null)
+				if (geoAddress.Source != null)
 				{
 					addressFound.Source.Should().NotBeNull();
-					//addressFound.Source.ObjectID.Should().Be(geoAddressValidResult.Source.ObjectID);
-					//addressFound.Source.Provider.Should().Be(geoAddressValidResult.Source.Provider);
+					//addressFound.Source.ObjectID.Should().Be(geoAddress.Source.ObjectID);
+					//addressFound.Source.Provider.Should().Be(geoAddress.Source.Provider);
 				}
 			}
 			else
@@ -93,9 +82,9 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 		[Test]
 		[Category("Geo")]
 		[Category("Geo.FindByLocation.Google")]
-		[TestCaseSource(nameof(AddressFindTestCaseItems))]
+		[TestCaseSource(typeof(UnitTestData), nameof(UnitTestData.GeoAddresses))]
 #pragma warning disable RECS0154 // Parameter is never used
-		public async Task GeoFindByLocationTest(string name, IGeoAddress geoAddress, IGeoAddress geoAddressValidResult, bool shouldBeValid)
+		public async Task GeoFindByLocationTest(IGeoAddress geoAddress, bool shouldBeValid)
 #pragma warning restore RECS0154 // Parameter is never used
 		{
 			var result = await _provider.FindAsync(geoAddress.Location);
@@ -108,12 +97,12 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 
 				var addressFound = result.Items.First();
 
-				addressFound.Line1.Should().BeEquivalentTo(geoAddressValidResult.Line1);
-				addressFound.Region.Should().BeEquivalentTo(geoAddressValidResult.Region);
-				addressFound.Country.Should().BeEquivalentTo(geoAddressValidResult.Country);
+				addressFound.Line1.Should().BeEquivalentTo(geoAddress.Line1);
+				addressFound.Region.Should().BeEquivalentTo(geoAddress.Region);
+				addressFound.Country.Should().BeEquivalentTo(geoAddress.Country);
 				addressFound.Location.Should().NotBeNull();
-				addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude.Value, 1.0);
-				addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude.Value, 1.0);
+				addressFound.Location.Latitude.Should().BeApproximately(geoAddress.Location.Latitude.Value, 1.0);
+				addressFound.Location.Longitude.Should().BeApproximately(geoAddress.Location.Longitude.Value, 1.0);
 			}
 			else
 			{
@@ -127,9 +116,9 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 		[Test]
 		[Category("Geo")]
 		[Category("Geo.FindByAddress.Google")]
-		[TestCaseSource(nameof(AddressFindTestCaseItems))]
+		[TestCaseSource(typeof(UnitTestData), nameof(UnitTestData.GeoAddresses))]
 #pragma warning disable RECS0154 // Parameter is never used
-		public async Task GeoFindByAddressTest(string name, IGeoAddress geoAddress, IGeoAddress geoAddressValidResult, bool shouldBeValid)
+		public async Task GeoFindByAddressTest(IGeoAddress geoAddress, bool shouldBeValid)
 #pragma warning restore RECS0154 // Parameter is never used
 		{
 			var result = await _provider.FindAsync(geoAddress);
@@ -141,12 +130,12 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 
 				var addressFound = result.Items.First();
 
-				addressFound.Line1.Should().BeEquivalentTo(geoAddressValidResult.Line1);
-				addressFound.Region.Should().BeEquivalentTo(geoAddressValidResult.Region);
-				addressFound.Country.Should().BeEquivalentTo(geoAddressValidResult.Country);
+				addressFound.Line1.Should().BeEquivalentTo(geoAddress.Line1);
+				addressFound.Region.Should().BeEquivalentTo(geoAddress.Region);
+				addressFound.Country.Should().BeEquivalentTo(geoAddress.Country);
 				addressFound.Location.Should().NotBeNull();
-				addressFound.Location.Latitude.Should().BeApproximately(geoAddressValidResult.Location.Latitude.Value, 1.0);
-				addressFound.Location.Longitude.Should().BeApproximately(geoAddressValidResult.Location.Longitude.Value, 1.0);
+				addressFound.Location.Latitude.Should().BeApproximately(geoAddress.Location.Latitude.Value, 1.0);
+				addressFound.Location.Longitude.Should().BeApproximately(geoAddress.Location.Longitude.Value, 1.0);
 			}
 			else
 			{
@@ -155,47 +144,5 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 			}
 		}
 
-		public static IEnumerable<TestCaseData> AddressSearchTestCaseItems()
-		{
-			// Valid Cases
-			yield return new TestCaseData("Wells Fargo Center", 1000,
-							new GeoAddress { Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "PA", Country = "US", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.172633, Latitude = 39.901171 } },
-							new GeoAddress { Name = "3601 S Broad St", Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "Pennsylvania", Country = "United States", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.1718743, Latitude = 39.9011799 }, Source = new ItemSource { ObjectID = "ChIJR7HjD-zFxokRLbpFP7Ixn1I", Provider = "google"} },
-							true).SetName("AddressSearchValid1");
-			yield return new TestCaseData("Wells Fargo Center", 1000,
-							new GeoAddress { Line1 = "3601 South Broad Street", Line2 = "", City = "", Region = "PA", Country = "US", PostalCode = "19148", Location = null },
-							new GeoAddress { Name = "3601 S Broad St", Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "Pennsylvania", Country = "United States", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.1720529, Latitude = 39.9011809 }, Source = new ItemSource { ObjectID = "ChIJ_WUdHezFxokRjF9cmJPUWrQ", Provider = "google" } },
-							true).SetName("AddressSearchValid2");
-			yield return new TestCaseData("Wells Fargo Center", 1000,
-							new GeoAddress { Line1 = "", Line2 = "", City = "Philadephia", Region = "PA", Country = "US", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.172633, Latitude = 39.901171 } },
-							new GeoAddress { Name = "3601 S Broad St", Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "Pennsylvania", Country = "United States", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.1718743, Latitude = 39.9011799 }, Source = new ItemSource { ObjectID = "ChIJR7HjD-zFxokRLbpFP7Ixn1I", Provider = "google" } },
-							true).SetName("AddressSearchValid3");
-			yield return new TestCaseData("Wells Fargo Center", 1000,
-							new GeoAddress { Line1 = "", Line2 = "", City = "", Region = "", Country = "", PostalCode = "", Location = new GeoLocation { Longitude = -75.172633, Latitude = 39.901171 } },
-							new GeoAddress { Name = "3601 S Broad St", Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "Pennsylvania", Country = "United States", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.1718743, Latitude = 39.9011799 }, Source = new ItemSource { ObjectID = "ChIJR7HjD-zFxokRLbpFP7Ixn1I", Provider = "google" } },
-							true).SetName("AddressSearchValid4");
-
-			// Invalid Cases
-			yield return new TestCaseData("Wells Fargo Center", 1000,
-							new GeoAddress { Line1 = "3A6G01 South Broad Street", Line2 = "", City = "Philadepia", Region = "NJ", Country = "US", PostalCode = "19148", Location = new GeoLocation { Longitude = -975.172633, Latitude = 1039.901171 } },
-							new GeoAddress { Name = "3601 S Broad St", Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "Pennsylvania", Country = "United States", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.1718743, Latitude = 39.9011799 }, Source = new ItemSource { ObjectID = "ChIJR7HjD-zFxokRLbpFP7Ixn1I", Provider = "google" } },
-							false).SetName("AddressSearchInvalid1");
-		}
-
-		public static IEnumerable<TestCaseData> AddressFindTestCaseItems()
-		{
-			// Valid Cases
-			yield return new TestCaseData("Wells Fargo Center", 
-							new GeoAddress { Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "PA", Country = "US", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.172633, Latitude = 39.901171 } },
-							new GeoAddress { Name = "3601 S Broad St", Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "Pennsylvania", Country = "United States", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.1718743, Latitude = 39.9011799 }, Source = new ItemSource { ObjectID = "ChIJR7HjD-zFxokRLbpFP7Ixn1I", Provider = "google" } },
-							true).SetName("AddressFindValid1");
-
-			// Invalid Cases
-			yield return new TestCaseData("Wells Fargo Center", 
-							new GeoAddress { Line1 = "3A6G01 South Broad Street", Line2 = "", City = "Philadepia", Region = "NJ", Country = "US", PostalCode = "19148", Location = new GeoLocation { Longitude = -975.172633, Latitude = 1039.901171 } },
-							new GeoAddress { Name = "3601 S Broad St", Line1 = "3601 South Broad Street", Line2 = "", City = "Philadephia", Region = "Pennsylvania", Country = "United States", PostalCode = "19148", Location = new GeoLocation { Longitude = -75.1718743, Latitude = 39.9011799 }, Source = new ItemSource { ObjectID = "ChIJR7HjD-zFxokRLbpFP7Ixn1I", Provider = "google" } },
-							false).SetName("AddressFindInvalid1");
-
-		}
 	}
 }
