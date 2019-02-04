@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Invisionware.IoC;
 using System.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace Invisionware.Net.GeoCoding.Google.Tests
 {
@@ -16,6 +17,11 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 		[SetUp]
 		public Task InitializeAsync()
 		{
+			var config = new ConfigurationBuilder()
+								.AddJsonFile("appsettings.json", true, true)
+								.AddJsonFile("appsettings.dev.json", true, true) // This is used for local work so API key is not added to git
+								.Build();
+
 			_provider = new GoogleGeoCoderProvider();
 
 			var container = Resolver.Resolve<IDependencyContainer>();
@@ -23,7 +29,7 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 
 			_provider.Initialize(coderProvider =>
 			{
-				coderProvider.APIKey = ConfigurationManager.AppSettings["GoogleApiKey"];
+				coderProvider.APIKey = config["googleApiKey"];
 			});
 
 			return Task.FromResult(true);
