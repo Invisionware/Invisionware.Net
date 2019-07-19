@@ -17,7 +17,7 @@
 	<ItemGroup>
 		<PackageReference Include="Invisionware.Serialization" Version="1.1.19-pre04" />
 		<PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.19-pre04" />
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
 	</ItemGroup>
 
 	<!-- Conditionally obtain references for the .NET Framework 4.5 target -->
