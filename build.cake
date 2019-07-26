@@ -195,9 +195,53 @@ Task("UnitTest")
 	.IsDependentOn("Build")
 	.Does(() => 
 {
+	switch (settings.Test.Framework)
+	{
+		case TestFrameworkTypes.DotNetCore:
+			RunTarget("UnitTest-DotNetCore");
+
+			break;
+		default: 
+			RunTarget("UnitTest-CLI");
+			
+			break;
+	}
+});
+
+Task("UnitTest-DotNetCore")
+	.Description("Run dotnetcore based unit tests for the solution.")
+	.WithCriteria(settings.ExecuteUnitTest)
+	.Does(() => 
+{
 	// Run all unit tests we can find.
 			
-	var assemplyFilePath = string.Format("{0}/**/bin/{1}/{2}", settings.Test.SourcePath, settings.Configuration, settings.Test.AssemblyFileSpec);
+	var filePath = string.Format("{0}/**/{1}", settings.Test.SourcePath, settings.Test.FileSpec);
+	
+	Information("Unit Test Files: {0}", filePath);
+	
+	var testProjects = GetFiles(filePath);
+	var testSettings = new DotNetCoreTestSettings()
+				{
+					Configuration = settings.Configuration,
+					NoBuild = true
+				};
+
+	foreach(var p in testProjects)
+	{
+		Information("Executing Tests for {0}", p);
+		
+		DotNetCoreTest(p.ToString(), testSettings);
+	}
+});
+
+Task("UnitTest-CLI")
+	.Description("Run unit tests for the solution.")
+	.WithCriteria(settings.ExecuteUnitTest)
+	.Does(() => 
+{
+	// Run all unit tests we can find.
+			
+	var assemplyFilePath = string.Format("{0}/**/bin/{1}/**/{2}", settings.Test.SourcePath, settings.Configuration, settings.Test.FileSpec);
 	
 	Information("Unit Test Files: {0}", assemplyFilePath);
 	

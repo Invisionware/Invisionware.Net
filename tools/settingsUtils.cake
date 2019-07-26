@@ -289,13 +289,13 @@ public class TestSettings
 	{
 		SourcePath = "./tests";
 		ResultsPath = "./tests";
-		AssemblyFileSpec = "*.UnitTests.dll";
+		FileSpec = "*.UnitTests.dll";
 		Framework = TestFrameworkTypes.NUnit3;
 	}
 	
 	public string SourcePath {get;set;}
 	public string ResultsPath {get;set;}
-	public string AssemblyFileSpec {get;set;}
+	public string FileSpec {get;set;}
 	public TestFrameworkTypes Framework {get;set;}
 			
 	public void Display(ICakeContext context)
@@ -303,7 +303,7 @@ public class TestSettings
 		context.Information("Test Settings:");
 		context.Information("\tSource Path: {0}", SourcePath);
 		context.Information("\tResults Path: {0}", ResultsPath);
-		context.Information("\tTest Assemploes File Spec: {0}", AssemblyFileSpec);
+		context.Information("\tTest Assemploes File Spec: {0}", FileSpec);
 	}
 }
 
@@ -395,5 +395,6 @@ public enum TestFrameworkTypes {
 	NUnit2,
 	NUnit3,
 	XUnit,
-	XUnit2
+	XUnit2,
+	DotNetCore
 }
