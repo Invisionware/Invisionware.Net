@@ -22,7 +22,7 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 
 		public IGeoAddress ValidAddress => new GeoAddress
 		{
-			Name = "Wells Fargo Center Philadelphia",
+			Name = "Wells Fargo Center",
 			Line1 = "3601 South Broad Street",
 			Line2 = "",
 			City = "Philadephia",
@@ -31,8 +31,8 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 			PostalCode = "19148",
 			Location = new GeoLocation
 			{
-				Longitude = -75.172633,
-				Latitude = 39.901171
+				Latitude = 39.901662502007774,
+				Longitude = -75.17271637916565
 			}
 		};
 

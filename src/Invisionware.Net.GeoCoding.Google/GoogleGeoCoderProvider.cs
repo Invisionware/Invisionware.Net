@@ -44,9 +44,9 @@ namespace Invisionware.Net.GeoCoding.Google
 		/// <exception cref="System.Exception">APIKey must be defined</exception>
 		public void Initialize(Action<IGeoCoderProvider> initFunc = null)
 		{
-            initFunc?.Invoke(this);
+			initFunc?.Invoke(this);
 
-            if (string.IsNullOrEmpty(APIKey))
+			if (string.IsNullOrEmpty(APIKey))
 			{
 				throw new Exception("APIKey must be defined");
 			}
@@ -143,11 +143,9 @@ namespace Invisionware.Net.GeoCoding.Google
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns>Task&lt;IAddress&gt;.</returns>
-		public async Task<IGeoAddress> GetAddressByIdAsync(string id)
+		public Task<IGeoAddress> GetAddressByIdAsync(string id)
 		{
-			var result =  await _wrapper.GetAddressByIdAsync(id).ConfigureAwait(false);
-
-			return result;
+			return _wrapper.GetAddressByIdAsync(id);
 		}
 
 		/// <summary>
@@ -155,11 +153,9 @@ namespace Invisionware.Net.GeoCoding.Google
 		/// </summary>
 		/// <param name="location">The location.</param>
 		/// <returns>Task&lt;IList&lt;IAddress&gt;&gt;.</returns>
-		public async Task<IGeoSearchResult> FindAsync(IGeoLocation location)
+		public Task<IGeoSearchResult> FindAsync(IGeoLocation location)
 		{
-			var result = await _wrapper.FindLocationAsync(location).ConfigureAwait(false);
-
-			return result;
+			return _wrapper.FindLocationAsync(location);
 		}
 
 		/// <summary>
@@ -167,11 +163,9 @@ namespace Invisionware.Net.GeoCoding.Google
 		/// </summary>
 		/// <param name="geoAddress">The address.</param>
 		/// <returns>Task&lt;IList&lt;IAddress&gt;&gt;.</returns>
-		public async Task<IGeoSearchResult> FindAsync(IGeoAddress geoAddress)
+		public Task<IGeoSearchResult> FindAsync(IGeoAddress geoAddress)
 		{
-			var result = await _wrapper.FindAddressAsync(geoAddress).ConfigureAwait(false);
-
-			return result;
+			return _wrapper.FindAddressAsync(geoAddress);
 		}
 
 		#endregion

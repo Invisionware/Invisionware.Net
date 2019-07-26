@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System;
 using System.Diagnostics;
 
 namespace Invisionware.Net.GeoCoding

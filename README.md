@@ -6,9 +6,10 @@ Invisionware Frmaework is a collection of utilities classes, extension methods, 
 This portion of the Invisionware Framework provides extensions and wrappers around a number of aspects related to Network and Internet type operations 
 
 ### GeoCoding
-This package provides an easy to use wrapper around a number of GeoCoding services.  Currently support exists for Google
+This package provides an easy to use wrapper around a number of GeoCoding services as well as utility methods for working with Geo Coordinates.  Currently support exists for Google
 
 ###### Usage
+
 ```
 // Setup IoC
 var container = new Invisionware.Ioc.Autofac.AutofacContainer(new Autofac.ContainerBuilder().Build());
@@ -38,6 +39,16 @@ var request = new GeoSearchRequest
 
 var result = await _provider.SearchAsync(request);
 
+```
+
+#### Utilities
+
+**Geo Location Distance Calculations**
+```
+GeoLocation loc1 = new GeoLocation();
+GeoLocation loc2 = new GeoLocation();
+
+var distanceInMiles = loc1.DistanceBetween(loc2);
 ```
 
 ### RestEase

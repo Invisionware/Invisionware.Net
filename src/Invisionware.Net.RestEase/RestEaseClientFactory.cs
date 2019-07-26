@@ -52,30 +52,48 @@ namespace Invisionware.Net
 		/// <value>The account API.</value>
 		public T Api { get; private set; }
 
+		/// <summary>  Occurs before the HttpClient sends any data</summary>
+		public event HttpLoggingHandler.OnSendAsyncHandler OnSendAsyncBefore;
+
+		/// <summary>Occurs after the httpclient sends its request</summary>
+		public event HttpLoggingHandler.OnSendAsyncHandler OnSendAsyncAfter;
+
 		/// <summary>
-		/// Initializes the asynchronous.
+		/// Initializes the factory.
 		/// </summary>
 		/// <param name="url">The URL.</param>
-		/// <param name="token">The token.</param>
 		/// <param name="options">The options.</param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentNullException">token - token cannot be null</exception>
-		public Task<bool> InitializeAsync(string url, string token, RestEaseClientFactoryOptions options = null)
+		public Task<bool> InitializeAsync(string url, RestEaseClientFactoryOptions options = null)
 		{
-			if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token), "token cannot be null");
+			return InitializeAsync(url, new HttpClientHandler(), options);
+		}
+
+		/// <summary>
+		/// Initializes the factory.
+		/// </summary>
+		/// <param name="url">The URL.</param>
+		/// <param name="authToken">The auth token.</param>
+		/// <param name="options">The options.</param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException">token - token cannot be null</exception>
+		public Task<bool> InitializeAsync(string url, string authToken, RestEaseClientFactoryOptions options = null)
+		{
+			if (string.IsNullOrEmpty(authToken)) throw new ArgumentNullException(nameof(authToken), "token cannot be null");
 
 #if DEBUG
-			Serilog.Log.Debug($"Authentication Token: {token}");
+			Serilog.Log.Debug($"Authentication Token: {authToken}");
 #endif
 
-			return InitializeAsync(url, new AuthenticatedHttpClientHandler(() => Task.FromResult(token))
+			return InitializeAsync(url, new AuthenticatedHttpClientHandler(() => Task.FromResult(authToken))
 			{
 				AuthenticationScheme = "Bearer"
 			}, options);
 		}
 
 		/// <summary>
-		/// initialize as an asynchronous operation.
+		/// initialize the factory.
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <param name="clientHandler">The client handler.</param>
@@ -89,8 +107,12 @@ namespace Invisionware.Net
 
 			HttpClient httpClient;
 
-			if (options?.EnableHttpLogging == null)
+			if (options?.EnableHttpLogging == true)
 			{
+				var loggingHandler = new HttpLoggingHandler(clientHandler);
+				if (OnSendAsyncBefore != null) loggingHandler.OnSendAsyncBefore += OnSendAsyncBefore;
+				if (OnSendAsyncAfter != null) loggingHandler.OnSendAsyncAfter += OnSendAsyncAfter;
+
 				httpClient = new HttpClient(new HttpLoggingHandler(clientHandler))
 				{
 					BaseAddress = new Uri(url)

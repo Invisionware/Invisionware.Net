@@ -167,7 +167,7 @@ namespace Invisionware.Net.GeoCoding.Google
 					//TODO Should we throw an exception here?
 					Log.Error("Failed to execute query for address search. {@results}", result);
 
-					return null;
+					throw new GoogleGeoProviderException(result.Status, httpMsgResponse, "Failed to execute query for address search");
 				}
 
 				return result.Item.ToAddress();
@@ -214,7 +214,7 @@ namespace Invisionware.Net.GeoCoding.Google
 					//TODO Should we thrown an exception here?
 					Log.Error("Failed to execute query for address search. {@results}", results);
 
-					return null;
+					throw new GoogleGeoProviderException(results.Status, httpMsgResponse, "Failed to execute query for address");
 				}
 
 				if (!autoLoadDetails)

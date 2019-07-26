@@ -4,7 +4,7 @@ using System;
 using System.Net.Http;
 using Invisionware.Net.Http;
 
-namespace Invisionware.Net.Tests
+namespace Invisionware.Net.Tests.Extensions
 {
     [TestFixture]
     [Category("HttpClient")]
