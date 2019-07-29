@@ -16,6 +16,7 @@ using Invisionware.Net.GeoCoding.Google.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace Invisionware.Net.GeoCoding.Google
 {
@@ -72,6 +73,14 @@ namespace Invisionware.Net.GeoCoding.Google
 				}
 			};
 
+			foreach (var addressType in source.Types)
+			{
+				if (Enum.TryParse<AddressTypes>(addressType.ToString(), out AddressTypes at))
+				{
+					address.AddressType.Add(at);
+				}
+			}
+
 			return address;
 		}
 
@@ -85,6 +94,19 @@ namespace Invisionware.Net.GeoCoding.Google
 			if (source == null) return null;
 
 			return source.Where(item => item != null).Select(item => item.ToAddress()).ToList();
+		}
+
+		static private T ParseEnum<T>(string value, T defaultValue) where T : struct, IConvertible
+		{
+			if (!typeof(T).GetTypeInfo().IsEnum) throw new ArgumentException("T must be an enumerated type");
+			if (string.IsNullOrEmpty(value)) return defaultValue;
+
+			foreach (T item in Enum.GetValues(typeof(T)))
+			{
+				if (string.Compare(item.ToString(), value, true) == 0) return item;
+			}
+
+			return defaultValue;
 		}
 	}
 }

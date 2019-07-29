@@ -12,6 +12,8 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System.Collections.Generic;
+
 namespace Invisionware.Net.GeoCoding
 {
 	/// <summary>
@@ -30,7 +32,7 @@ namespace Invisionware.Net.GeoCoding
 		/// Gets or sets the type of the address.
 		/// </summary>
 		/// <value>The type of the address.</value>
-		AddressTypes AddressType { get; set; }
+		IList<AddressTypes> AddressType { get; set; }
 
 		/// <summary>
 		/// Gets or sets the line1.

@@ -13,6 +13,7 @@
 // ***********************************************************************
 
 using Invisionware.IoC;
+using System.Collections.Generic;
 
 namespace Invisionware.Net.GeoCoding
 {
@@ -28,6 +29,7 @@ namespace Invisionware.Net.GeoCoding
 		{
 			Location = Resolver.Resolve<IGeoLocation>();
 			Source = new ItemSource();
+			AddressType = new List<AddressTypes>();
 		}
 
 		#region Implementation of IAddress
@@ -37,7 +39,7 @@ namespace Invisionware.Net.GeoCoding
 		/// Gets or sets the type of the address.
 		/// </summary>
 		/// <value>The type of the address.</value>
-		public AddressTypes AddressType { get; set; }
+		public IList<AddressTypes> AddressType { get; set; }
 		/// <summary>
 		/// Gets or sets the line1.
 		/// </summary>

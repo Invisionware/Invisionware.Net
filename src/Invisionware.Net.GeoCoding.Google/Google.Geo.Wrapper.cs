@@ -283,7 +283,9 @@ namespace Invisionware.Net.GeoCoding.Google
 																			return (IGeoSearchResult) result;
 																		});
 
-				return await taskResult.ConfigureAwait(false);
+				var detailsResults = await taskResult.ConfigureAwait(false);
+
+				return detailsResults;
 			}
 			catch (Newtonsoft.Json.JsonSerializationException ex)
 			{
