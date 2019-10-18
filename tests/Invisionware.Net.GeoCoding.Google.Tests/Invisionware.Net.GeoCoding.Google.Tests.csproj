@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.4" />
     <PackageReference Include="FluentAssertions" Version="5.9.0" />
-    <PackageReference Include="Invisionware.IoC" Version="1.0.2-pre01" />
+    <PackageReference Include="Invisionware.IoC" Version="1.0.2-pre02" />
     <PackageReference Include="Invisionware.IoC.Autofac" Version="1.0.2-pre01" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
