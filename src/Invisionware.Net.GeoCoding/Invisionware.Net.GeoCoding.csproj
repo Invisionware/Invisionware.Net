@@ -15,7 +15,7 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre01" />
+		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre02" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
 	</ItemGroup>
 	
