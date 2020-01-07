@@ -5,6 +5,7 @@ using System.Text;
 namespace Invisionware.Net.GeoCoding
 {
 	[Serializable]
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2229:Add a constructor wit the following signature 'protected GeoException(SerializtionInfo info, StreamContext contenxt)", Justification = "<Pending>")]
 	public class GeoException : Exception
 	{
 		public GeoException()

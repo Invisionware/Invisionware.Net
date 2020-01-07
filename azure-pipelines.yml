@@ -13,6 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  buildTarget: 'Nuget-Package'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -23,38 +24,28 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+- task: FileTransform@2
+  displayName: 'Transform appsettings.json'
+  inputs:
+    folderPath: '$(Build.SourcesDirectory)/tests/**/*.json'
+    jsonTargetFiles: 'appsettings.json'
+
 - task: Cake@0
   displayName: 'Build Solution: Cake'
   inputs:
     script: 'build.cake'
-    target: 'Nuget-Package'
+    target: '$(buildTarget)'
     verbosity: 'Verbose'
-    arguments: '-NugetArtifactsPath=$(Build.ArtifactStagingDirectory) -configuration=$(buildConfiguration)'
-
-- task: VSBuild@1
-  displayName: 'Build Solution'
-  enabled: false
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    clean: true
-    createLogFile: true
-
-- task: DotNetCoreCLI@2
-  enabled: false
-  displayName: 'NUnit Tests: Run'
-  inputs:
-    command: 'test'
-    projects: '$(solution)'
+    arguments: '-NugetArtifactsPath=$(Build.ArtifactStagingDirectory) -configuration=$(buildConfiguration)' 
 
 - task: PublishTestResults@2
-  displayName: 'NUnit Tests: Publish results'
-  enabled: false
+  displayName: 'Unit Tests: Publish results'
+  enabled: true
   inputs:
-    testResultsFormat: 'NUnit'
-    testResultsFiles: 'tests/**/TEST-*.xml'
+    testResultsFormat: 'VSTest'
+    testResultsFiles: 'tests/**/*.trx'
     mergeTestResults: true
+    failTaskOnFailedTests: true
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts'
