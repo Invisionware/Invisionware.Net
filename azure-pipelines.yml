@@ -43,28 +43,6 @@ steps:
     tokenPrefix: '#{'
     tokenSuffix: '}#'
 
-- task: JsonPatch@3
-  displayName: 'Transform appsetings.json'
-  enabled: false
-  inputs:
-    SyntaxType: 'slick'
-    JsonWorkingDir: '$(Build.SourcesDirectory)/tests'
-    JsonTargetFilters: |
-      /**/appSettings.json
-      /**/appSettings.*.json
-    JsonPatchContent: 'googleApiKey => $(googleApiKey)'
-    OutputPatchFile: true
-    TreatErrors: 'ERROR'
-
-- task: FileTransform@2
-  displayName: 'Transform appsettings.json'
-  enabled: false
-  inputs:
-    folderPath: '$(Build.SourcesDirectory)\tests\**'
-    jsonTargetFiles: |
-      $(Build.SourcesDirectory)\tests\**\appsettings.json
-      $(Build.SourcesDirectory)\tests\**\appsettings.$(buildConfiguration).json
-
 - task: Cake@0
   displayName: 'Build Solution: Cake'
   inputs:
@@ -78,7 +56,7 @@ steps:
   enabled: true
   inputs:
     testResultsFormat: 'VSTest'
-    testResultsFiles: 'tests/**/*.trx'
+    testResultsFiles: '$(Build.SourcesDirectory)/artifacts/tests/**/*.trx'
     mergeTestResults: true
     failTaskOnFailedTests: true
 
