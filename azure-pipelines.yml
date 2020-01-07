@@ -79,7 +79,7 @@ stages:
                 - task: NuGetCommand@2
                   inputs:
                     command: 'push'
-                    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+                    packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg;!$(Pipeline.Workspace)/**/*.snupkg'
                     nuGetFeedType: 'external'
                     publishFeedCredentials: 'Github Connection'
 
