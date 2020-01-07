@@ -17,7 +17,7 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 		[SetUp]
 		public Task InitializeAsync()
 		{
-			var config = new ConfigurationBuilder()
+			var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
 								.AddJsonFile("appsettings.json", true, true)
 								.AddJsonFile("appsettings.dev.json", true, true) // This is used for local work so API key is not added to git
 								.Build();

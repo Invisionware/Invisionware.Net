@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Invisionware.Net.GeoCoding
 {
+	[Serializable]
 	public class GeoException : Exception
 	{
 		public GeoException()

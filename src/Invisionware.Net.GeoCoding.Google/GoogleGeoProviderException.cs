@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Invisionware.Net.GeoCoding.Google
 {
+	[Serializable]
 	public class GoogleGeoProviderException : GeoException
 	{
 		public GoogleStatusCodeTypes StatusCode { get; private set; }
