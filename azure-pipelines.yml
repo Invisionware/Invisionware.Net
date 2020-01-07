@@ -10,10 +10,15 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-  buildTarget: 'Nuget-Package'
+  - group: Invisionware.Net
+  - name: solution
+    value: '**/*.sln'
+  - name: buildPlatform
+    value: 'Any CPU'
+  - name: buildConfiguration
+    value: 'Release'
+  - name: buildTarget
+    value: 'Nuget-Package'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -27,7 +32,7 @@ steps:
 - task: FileTransform@2
   displayName: 'Transform appsettings.json'
   inputs:
-    folderPath: '$(Build.SourcesDirectory)/tests/**/*.json'
+    folderPath: '$(Build.SourcesDirectory)/tests/**/'
     jsonTargetFiles: 'appsettings.json'
 
 - task: Cake@0
