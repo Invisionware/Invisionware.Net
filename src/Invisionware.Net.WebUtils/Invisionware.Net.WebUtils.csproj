@@ -5,14 +5,22 @@
 		<PackageId>Invisionware.Net.WebUtils</PackageId>
 		<Authors>Invisionware</Authors>
 		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.Net</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Invisionware/Invisionware.Net</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+		<PackageIcon>logo.png</PackageIcon>
 		<license>Apache-2.0</license>
-		<PackageIconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</PackageIconUrl>
+		<Copyright>Copyright © 2020 Invisionware</Copyright>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Description>Contains various extensions and supporting utilities for Web and Network code</Description>
-		<PackageReleaseNotes />
-		<Copyright>Copyright © 2018 Invisionware</Copyright>
 		<PackageTags>serialize invisionware url querystring</PackageTags>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>		
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\logo.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Invisionware.Serialization" Version="1.1.19-pre04" />
@@ -24,5 +32,5 @@
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
 		<PackageReference Include="System.Net.Http" Version="4.3.4" />
 	</ItemGroup>
-	
+
 </Project>

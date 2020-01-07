@@ -5,14 +5,22 @@
 		<PackageId>Invisionware.Net.GeoCoding</PackageId>
 		<Authors>Invisionware</Authors>
 		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.Net</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Invisionware/Invisionware.Net</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+		<PackageIcon>logo.png</PackageIcon>
 		<license>Apache-2.0</license>
-		<PackageIconUrl>https://github.com/Invisionware/Invisionware.Net/raw/master/logo.png</PackageIconUrl>
+		<Copyright>Copyright © 2020 Invisionware</Copyright>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Description>Contains geocoding libraries that support most of the plain providers (google, yahoo, etc.)</Description>
-		<PackageReleaseNotes />
-		<Copyright>Copyright © 2018 Invisionware</Copyright>
 		<PackageTags>invisionware geocoding address geo</PackageTags>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>		
 	</PropertyGroup>
+	
+	<ItemGroup>
+		<None Include="..\..\logo.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre02" />
