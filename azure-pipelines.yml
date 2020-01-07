@@ -32,11 +32,9 @@ steps:
 - task: FileTransform@2
   displayName: 'Transform appsettings.json'
   inputs:
-    folderPath: '$(Build.SourcesDirectory)/tests/**/'
-    xmlTransformationRules: '-transform **\*.$(buildConfiguration).config -xml **\*.config'
     jsonTargetFiles: |
-      $(Build.SourcesDirectory)/tests/**/appsettings.json
-      $(Build.SourcesDirectory)/tests/**/appsettings.$(buildConfiguration).json
+      $(Build.SourcesDirectory)\tests\**\appsettings.json
+      $(Build.SourcesDirectory)\tests\**\appsettings.$(buildConfiguration).json
 
 - task: Cake@0
   displayName: 'Build Solution: Cake'
