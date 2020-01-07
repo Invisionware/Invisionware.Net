@@ -32,10 +32,10 @@ steps:
 - task: JsonPatch@3
   inputs:
     SyntaxType: 'slick'
-    JsonWorkingDir: '$(Build.SourcesDirectory)\tests'
+    JsonWorkingDir: '$(Build.SourcesDirectory)/tests'
     JsonTargetFilters: |
-      appSettings.json
-      appSettings.*.json
+      /**/appSettings.json
+      /**/appSettings.*.json
     JsonPatchContent: 'googleApiKey => $(googleApiKey)'
     OutputPatchFile: true
     TreatErrors: 'ERROR'
