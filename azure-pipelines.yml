@@ -29,8 +29,20 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+- task: JsonPatch@3
+  inputs:
+    SyntaxType: 'slick'
+    JsonWorkingDir: '$(Build.SourcesDirectory)\tests'
+    JsonTargetFilters: |
+      appSettings.json
+      appSettings.*.json
+    JsonPatchContent: 'googleApiKey => $(googleApiKey)'
+    OutputPatchFile: true
+    TreatErrors: 'ERROR'
+
 - task: FileTransform@2
   displayName: 'Transform appsettings.json'
+  enabled: false
   inputs:
     folderPath: '$(Build.SourcesDirectory)\tests\**'
     jsonTargetFiles: |
