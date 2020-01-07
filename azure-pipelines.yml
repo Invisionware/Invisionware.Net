@@ -32,7 +32,6 @@ steps:
 - task: FileTransform@1
   displayName: 'Transform appsettings.json'
   inputs:
-    folderPath: '$(Build.SourcesDirectory)\tests\**\*.json'
     enableXmlTransform: false
     fileType: json
     targetFiles: |
