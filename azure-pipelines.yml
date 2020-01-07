@@ -29,11 +29,13 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: FileTransform@2
+- task: FileTransform@1
   displayName: 'Transform appsettings.json'
   inputs:
-    folderPath: '$(Build.SourcesDirectory)\tests\**\*.json'
-    jsonTargetFiles: |
+    folderPath: '$(Build.SourcesDirectory)\tests\**'
+    enableXmlTransform: false
+    fileType: json
+    targetFiles: |
       $(Build.SourcesDirectory)\tests\**\appsettings.json
       $(Build.SourcesDirectory)\tests\**\appsettings.$(buildConfiguration).json
 
