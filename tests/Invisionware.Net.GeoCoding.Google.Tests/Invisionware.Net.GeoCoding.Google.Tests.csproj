@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Autofac" Version="4.9.4" />
+		<PackageReference Include="Autofac" Version="5.1.2" />
 		<PackageReference Include="FluentAssertions" Version="5.10.0" />
 		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre03" />
 		<PackageReference Include="Invisionware.IoC.Autofac" Version="1.0.2-pre02" />
