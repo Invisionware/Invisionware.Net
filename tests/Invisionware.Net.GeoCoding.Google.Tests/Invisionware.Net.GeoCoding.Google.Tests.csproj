@@ -11,7 +11,7 @@
 		<PackageReference Include="Autofac" Version="4.9.4" />
 		<PackageReference Include="FluentAssertions" Version="5.10.0" />
 		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre03" />
-		<PackageReference Include="Invisionware.IoC.Autofac" Version="1.0.2-pre02" />
+		<PackageReference Include="Invisionware.IoC.Autofac" Version="1.0.2-pre03" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
 		<PackageReference Include="Microsoft.VisualStudio.SlowCheetah" Version="3.2.26">
