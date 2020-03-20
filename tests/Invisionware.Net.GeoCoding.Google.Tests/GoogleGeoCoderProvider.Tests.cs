@@ -20,6 +20,7 @@ namespace Invisionware.Net.GeoCoding.Google.Tests
 			var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
 								.AddJsonFile("appsettings.json", true, true)
 								.AddJsonFile("appsettings.dev.json", true, true) // This is used for local work so API key is not added to git
+								.AddEnvironmentVariables() // THis is used for AzureDevops
 								.Build();
 
 			_provider = new GoogleGeoCoderProvider();
