@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Invisionware.Serialization" Version="1.1.19-pre05" />
+		<PackageReference Include="Invisionware.Serialization" Version="1.1.19" />
 		<PackageReference Include="Invisionware.Serialization.JSON" Version="1.1.19-pre05" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 	</ItemGroup>
