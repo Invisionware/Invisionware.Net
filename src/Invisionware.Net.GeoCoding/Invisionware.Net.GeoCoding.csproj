@@ -23,7 +23,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre03" />
+		<PackageReference Include="Invisionware.IoC" Version="1.0.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 	</ItemGroup>
 	
