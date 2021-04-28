@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: RestEase
+    versions:
+    - 1.5.2
+    - 1.5.3
+  - dependency-name: Autofac
+    versions:
+    - 6.1.0
